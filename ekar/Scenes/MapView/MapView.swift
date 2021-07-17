@@ -12,31 +12,40 @@ struct MapView: View {
     
     @ObservedObject var viewModel: MapViewModel
     
+    @State var isActive: Bool = false
+    @State var selectedAnnotation: MKAnnotation?
+    
     init(viewModel: MapViewModel) {
         self.viewModel = viewModel
     }
     
     var body: some View {
-        MapViewRepresentable(annotations: viewModel.availableVehicles)
-            .onAppear(perform: {
-                viewModel.loadVehicles()
-            })
+        NavigationView {
+            VStack {
+                NavigationLink(destination: VehicleView(), isActive: self.$isActive) {
+                        EmptyView()
+                    }
+                MapViewRepresentable(annotations: viewModel.mapAnnotations, isActive: self.$isActive, selectedAnnotation: self.$selectedAnnotation)
+                    .onAppear(perform: {
+                        viewModel.loadVehicles()
+                    })
+            }
+        }
     }
 }
 
 struct MapViewRepresentable: UIViewRepresentable {
     
     var annotations: [MapAnnotation]
+    @Binding var isActive: Bool
+    @Binding var selectedAnnotation: MKAnnotation?
     
     func makeCoordinator() -> MapViewCoordinator {
         MapViewCoordinator(self)
     }
     
     func makeUIView(context: Context) -> MKMapView {
-        MKMapView(frame: .zero)
-    }
-    
-    func updateUIView(_ view: MKMapView, context: Context){
+        let view = MKMapView(frame: .zero)
         
         let coordinate = CLLocationCoordinate2D(
                     latitude: 25.0709248, longitude: 55.1429923)
@@ -45,6 +54,10 @@ struct MapViewRepresentable: UIViewRepresentable {
                     MKCoordinateRegion(center: coordinate, span: span)
                 view.setRegion(region, animated: true)
         
+        return view
+    }
+    
+    func updateUIView(_ view: MKMapView, context: Context) {
         view.delegate = context.coordinator
         view.removeAnnotations(annotations)
         view.addAnnotations(annotations)

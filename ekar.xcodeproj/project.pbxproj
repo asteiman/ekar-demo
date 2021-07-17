@@ -20,6 +20,7 @@
 		D955CAF926A181AE00A82394 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CAF826A181AE00A82394 /* WebRepository.swift */; };
 		D955CAFC26A1820C00A82394 /* VehicleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CAFB26A1820C00A82394 /* VehicleRepository.swift */; };
 		D955CAFE26A1825B00A82394 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CAFD26A1825B00A82394 /* Vehicle.swift */; };
+		D9B025B826A2CF1E00CE3DD4 /* VehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B025B726A2CF1E00CE3DD4 /* VehicleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		D955CAF826A181AE00A82394 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		D955CAFB26A1820C00A82394 /* VehicleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleRepository.swift; sourceTree = "<group>"; };
 		D955CAFD26A1825B00A82394 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		D9B025B726A2CF1E00CE3DD4 /* VehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		D955CAE726A13FA600A82394 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D9B025B626A2CF0E00CE3DD4 /* VehicleView */,
 				D955CAEC26A16AF200A82394 /* MapView */,
 			);
 			path = Scenes;
@@ -205,6 +208,14 @@
 				D955CAFB26A1820C00A82394 /* VehicleRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D9B025B626A2CF0E00CE3DD4 /* VehicleView */ = {
+			isa = PBXGroup;
+			children = (
+				D9B025B726A2CF1E00CE3DD4 /* VehicleView.swift */,
+			);
+			path = VehicleView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +350,7 @@
 				D955CAFE26A1825B00A82394 /* Vehicle.swift in Sources */,
 				D955CAEE26A16B0100A82394 /* MapViewCoordinator.swift in Sources */,
 				D955CAF126A173E400A82394 /* MapAnnotation.swift in Sources */,
+				D9B025B826A2CF1E00CE3DD4 /* VehicleView.swift in Sources */,
 				D955CAFC26A1820C00A82394 /* VehicleRepository.swift in Sources */,
 				D955CAF726A1817000A82394 /* APICall.swift in Sources */,
 				D955CABD26A13EE400A82394 /* ekarApp.swift in Sources */,
