@@ -8,11 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		D955CABD26A13EE400A82394 /* ekarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CABC26A13EE400A82394 /* ekarApp.swift */; };
-		D955CABF26A13EE400A82394 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CABE26A13EE400A82394 /* ContentView.swift */; };
 		D955CAC126A13EE500A82394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D955CAC026A13EE500A82394 /* Assets.xcassets */; };
 		D955CAC426A13EE500A82394 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D955CAC326A13EE500A82394 /* Preview Assets.xcassets */; };
 		D955CACF26A13EE500A82394 /* ekarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CACE26A13EE500A82394 /* ekarTests.swift */; };
 		D955CADA26A13EE500A82394 /* ekarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CAD926A13EE500A82394 /* ekarUITests.swift */; };
+		D955CAE926A13FB700A82394 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CAE826A13FB700A82394 /* MapView.swift */; };
+		D955CAEB26A142B900A82394 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CAEA26A142B900A82394 /* MapViewModel.swift */; };
+		D955CAEE26A16B0100A82394 /* MapViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CAED26A16B0100A82394 /* MapViewCoordinator.swift */; };
+		D955CAF126A173E400A82394 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CAF026A173E400A82394 /* MapAnnotation.swift */; };
+		D955CAF726A1817000A82394 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CAF626A1817000A82394 /* APICall.swift */; };
+		D955CAF926A181AE00A82394 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CAF826A181AE00A82394 /* WebRepository.swift */; };
+		D955CAFC26A1820C00A82394 /* VehicleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CAFB26A1820C00A82394 /* VehicleRepository.swift */; };
+		D955CAFE26A1825B00A82394 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CAFD26A1825B00A82394 /* Vehicle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +42,6 @@
 /* Begin PBXFileReference section */
 		D955CAB926A13EE400A82394 /* ekar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ekar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D955CABC26A13EE400A82394 /* ekarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ekarApp.swift; sourceTree = "<group>"; };
-		D955CABE26A13EE400A82394 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D955CAC026A13EE500A82394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D955CAC326A13EE500A82394 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D955CAC526A13EE500A82394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +51,14 @@
 		D955CAD526A13EE500A82394 /* ekarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ekarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D955CAD926A13EE500A82394 /* ekarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ekarUITests.swift; sourceTree = "<group>"; };
 		D955CADB26A13EE500A82394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D955CAE826A13FB700A82394 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		D955CAEA26A142B900A82394 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		D955CAED26A16B0100A82394 /* MapViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewCoordinator.swift; sourceTree = "<group>"; };
+		D955CAF026A173E400A82394 /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
+		D955CAF626A1817000A82394 /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
+		D955CAF826A181AE00A82394 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
+		D955CAFB26A1820C00A82394 /* VehicleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleRepository.swift; sourceTree = "<group>"; };
+		D955CAFD26A1825B00A82394 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +109,14 @@
 		D955CABB26A13EE400A82394 /* ekar */ = {
 			isa = PBXGroup;
 			children = (
-				D955CABC26A13EE400A82394 /* ekarApp.swift */,
-				D955CABE26A13EE400A82394 /* ContentView.swift */,
-				D955CAC026A13EE500A82394 /* Assets.xcassets */,
-				D955CAC526A13EE500A82394 /* Info.plist */,
+				D955CAFA26A181F700A82394 /* Repositories */,
+				D955CAF526A1816100A82394 /* Network */,
+				D955CAF426A1743000A82394 /* Assets */,
+				D955CAF226A1741D00A82394 /* App */,
+				D955CAEF26A173C800A82394 /* Models */,
+				D955CAE726A13FA600A82394 /* Scenes */,
 				D955CAC226A13EE500A82394 /* Preview Content */,
+				D955CAC526A13EE500A82394 /* Info.plist */,
 			);
 			path = ekar;
 			sourceTree = "<group>";
@@ -128,6 +145,66 @@
 				D955CADB26A13EE500A82394 /* Info.plist */,
 			);
 			path = ekarUITests;
+			sourceTree = "<group>";
+		};
+		D955CAE726A13FA600A82394 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				D955CAEC26A16AF200A82394 /* MapView */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		D955CAEC26A16AF200A82394 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				D955CAE826A13FB700A82394 /* MapView.swift */,
+				D955CAEA26A142B900A82394 /* MapViewModel.swift */,
+				D955CAED26A16B0100A82394 /* MapViewCoordinator.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		D955CAEF26A173C800A82394 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D955CAF026A173E400A82394 /* MapAnnotation.swift */,
+				D955CAFD26A1825B00A82394 /* Vehicle.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D955CAF226A1741D00A82394 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D955CABC26A13EE400A82394 /* ekarApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D955CAF426A1743000A82394 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D955CAC026A13EE500A82394 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		D955CAF526A1816100A82394 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D955CAF626A1817000A82394 /* APICall.swift */,
+				D955CAF826A181AE00A82394 /* WebRepository.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D955CAFA26A181F700A82394 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D955CAFB26A1820C00A82394 /* VehicleRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +336,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D955CABF26A13EE400A82394 /* ContentView.swift in Sources */,
+				D955CAFE26A1825B00A82394 /* Vehicle.swift in Sources */,
+				D955CAEE26A16B0100A82394 /* MapViewCoordinator.swift in Sources */,
+				D955CAF126A173E400A82394 /* MapAnnotation.swift in Sources */,
+				D955CAFC26A1820C00A82394 /* VehicleRepository.swift in Sources */,
+				D955CAF726A1817000A82394 /* APICall.swift in Sources */,
 				D955CABD26A13EE400A82394 /* ekarApp.swift in Sources */,
+				D955CAE926A13FB700A82394 /* MapView.swift in Sources */,
+				D955CAEB26A142B900A82394 /* MapViewModel.swift in Sources */,
+				D955CAF926A181AE00A82394 /* WebRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

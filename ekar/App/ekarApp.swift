@@ -11,7 +11,7 @@ import SwiftUI
 struct ekarApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MapView(viewModel: MapViewModel())
         }
     }
 }
