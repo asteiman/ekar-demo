@@ -16,7 +16,7 @@ class VehicleRepository: VehicleRepositoryProtocol {
     
     let session: URLSession
     let baseURL: String
-    let bgQueue = DispatchQueue(label: "bg_parse_queue")
+    let bgQueue = DispatchQueue(label: "bg_queue")
     
     init(session: URLSession, baseURL: String) {
         self.session = session
@@ -24,7 +24,7 @@ class VehicleRepository: VehicleRepositoryProtocol {
     }
     
     func getBy(vin: String) -> AnyPublisher<Vehicle, GenericError> {
-        return call(endpoint: API.vehicle(key: "tha91z6lv_j8u1nv4xs_ilfswb1e3", vin: vin))
+        return call(endpoint: API.vehicle(key: "b06xiwql9_1hdmgou3u_n0uqktk51", vin: vin))
             .mapError { _ in
                 GenericError.network
             }.eraseToAnyPublisher()
@@ -42,7 +42,7 @@ extension VehicleRepository.API: APICall {
     var path: String {
         switch self {
         case .vehicle(let key, let vin):
-            return "/specs?key=\(key)&vin=\(vin)"
+            return "/specs?key=\(key)&vin=\(vin)&deepdata=1"
         }
     }
 
