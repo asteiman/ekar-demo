@@ -7,7 +7,14 @@
 
 import Foundation
 
-struct Vehicle: Decodable {
+struct Vehicle {
+    let vin: String
+    let data: VehicleData
+    var lat: Double
+    var long: Double
+}
+
+struct VehicleData: Decodable {
     let year: String
     let make: String
     let model: String

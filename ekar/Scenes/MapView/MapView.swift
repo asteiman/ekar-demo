@@ -28,7 +28,7 @@ struct MapView: View {
                 MapViewRepresentable(annotations: viewModel.mapAnnotations, isActive: self.$isActive, selectedAnnotation: self.$selectedAnnotation)
                     .onAppear(perform: {
                         viewModel.loadVehicles()
-                    })
+                    }).ignoresSafeArea()
             }
         }
     }

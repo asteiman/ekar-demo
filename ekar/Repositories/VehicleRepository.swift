@@ -27,7 +27,19 @@ class VehicleRepository: VehicleRepositoryProtocol {
         return call(endpoint: API.vehicle(key: "b06xiwql9_1hdmgou3u_n0uqktk51", vin: vin))
             .mapError { _ in
                 GenericError.network
-            }.eraseToAnyPublisher()
+            }
+            .map({ (vehicleData: VehicleData) in
+                let coordinates = self.getCoordinatesBy(vin: vin)
+                return Vehicle(vin: vin, data: vehicleData, lat: coordinates.0, long: coordinates.1)
+            })
+            .eraseToAnyPublisher()
+    }
+    
+    private func getCoordinatesBy(vin: String) -> (Double, Double) {
+        let coordinates = ["JTDZN3EU0E3298500": (25.0695998, 55.1440724),
+                           "1FDWE37S7WHB57339": (25.0695998, 55.1430724)]
+        
+        return coordinates[vin]!
     }
 }
 

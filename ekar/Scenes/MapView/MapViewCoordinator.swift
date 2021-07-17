@@ -24,7 +24,6 @@ class MapViewCoordinator: NSObject, MKMapViewDelegate {
         
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            
             annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         } else {
             annotationView?.annotation = annotation
