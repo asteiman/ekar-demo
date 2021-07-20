@@ -15,7 +15,14 @@ class MapViewModel: ObservableObject {
     private var availableVehicles: [Vehicle] = []
     private var cancellable: AnyCancellable?
     
-    func loadVehicles() {
+    init() {
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { timer in
+            self.loadVehicles()
+        }
+    }
+    
+    private func loadVehicles() {
+        isLoading = true
         let vinNumbersToRequest = ["JTDZN3EU0E3298500", "1FDWE37S7WHB57339"]
         var requests = [AnyPublisher<Vehicle, GenericError>]()
         
@@ -28,7 +35,7 @@ class MapViewModel: ObservableObject {
         
         cancellable = downstream
             .sink(receiveCompletion: { _ in
-                self.isLoading = true
+                self.isLoading = false
         }, receiveValue: { returnedVehicles in
             self.availableVehicles = returnedVehicles
             self.mapAnnotations = returnedVehicles.map({ vehicle in

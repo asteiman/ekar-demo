@@ -20,15 +20,17 @@ struct MapView: View {
     }
     
     var body: some View {
-        NavigationView {
-            VStack {
-                NavigationLink(destination: VehicleView(), isActive: self.$isActive) {
-                        EmptyView()
-                    }
-                MapViewRepresentable(annotations: viewModel.mapAnnotations, isActive: self.$isActive, selectedAnnotation: self.$selectedAnnotation)
-                    .onAppear(perform: {
-                        viewModel.loadVehicles()
-                    }).ignoresSafeArea()
+        if viewModel.isLoading {
+            Text("Loading")
+        } else {
+            NavigationView {
+                VStack {
+                    NavigationLink(destination: VehicleView(), isActive: self.$isActive) {
+                            EmptyView()
+                        }
+                    MapViewRepresentable(annotations: viewModel.mapAnnotations, isActive: self.$isActive, selectedAnnotation: self.$selectedAnnotation)
+                }
+                .navigationBarTitle("EKAR", displayMode: .inline)
             }
         }
     }

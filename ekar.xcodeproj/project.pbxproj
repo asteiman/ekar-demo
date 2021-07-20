@@ -20,6 +20,8 @@
 		D955CAF926A181AE00A82394 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CAF826A181AE00A82394 /* WebRepository.swift */; };
 		D955CAFC26A1820C00A82394 /* VehicleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CAFB26A1820C00A82394 /* VehicleRepository.swift */; };
 		D955CAFE26A1825B00A82394 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CAFD26A1825B00A82394 /* Vehicle.swift */; };
+		D98D6FA726A6CFA300DF3221 /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D6FA626A6CFA300DF3221 /* PagingView.swift */; };
+		D98D6FA926A7099400DF3221 /* FlexibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D6FA826A7099400DF3221 /* FlexibleView.swift */; };
 		D9B025B826A2CF1E00CE3DD4 /* VehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B025B726A2CF1E00CE3DD4 /* VehicleView.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		D955CAF826A181AE00A82394 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		D955CAFB26A1820C00A82394 /* VehicleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleRepository.swift; sourceTree = "<group>"; };
 		D955CAFD26A1825B00A82394 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		D98D6FA626A6CFA300DF3221 /* PagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
+		D98D6FA826A7099400DF3221 /* FlexibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleView.swift; sourceTree = "<group>"; };
 		D9B025B726A2CF1E00CE3DD4 /* VehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -214,6 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				D9B025B726A2CF1E00CE3DD4 /* VehicleView.swift */,
+				D98D6FA626A6CFA300DF3221 /* PagingView.swift */,
+				D98D6FA826A7099400DF3221 /* FlexibleView.swift */,
 			);
 			path = VehicleView;
 			sourceTree = "<group>";
@@ -353,6 +359,8 @@
 				D9B025B826A2CF1E00CE3DD4 /* VehicleView.swift in Sources */,
 				D955CAFC26A1820C00A82394 /* VehicleRepository.swift in Sources */,
 				D955CAF726A1817000A82394 /* APICall.swift in Sources */,
+				D98D6FA726A6CFA300DF3221 /* PagingView.swift in Sources */,
+				D98D6FA926A7099400DF3221 /* FlexibleView.swift in Sources */,
 				D955CABD26A13EE400A82394 /* ekarApp.swift in Sources */,
 				D955CAE926A13FB700A82394 /* MapView.swift in Sources */,
 				D955CAEB26A142B900A82394 /* MapViewModel.swift in Sources */,
