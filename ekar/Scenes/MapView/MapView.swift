@@ -31,6 +31,14 @@ struct MapView: View {
                     MapViewRepresentable(annotations: viewModel.mapAnnotations, isActive: self.$isActive, selectedAnnotation: self.$selectedAnnotation)
                 }
                 .navigationBarTitle("EKAR", displayMode: .inline)
+                .navigationBarTitle("", displayMode: .inline)
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Image("logo")
+                            .resizable()
+                            .frame(width: 80, height: 40, alignment: .center)
+                    }
+                }
             }
         }
     }

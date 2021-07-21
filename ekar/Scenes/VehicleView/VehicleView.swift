@@ -153,6 +153,6 @@ struct VehicleView: View {
 
 struct VehicleView_Previews: PreviewProvider {
     static var previews: some View {
-        VehicleView()
+        VehicleView(viewModel: VehicleViewModel(repository: PreviewVehicleRepository(), vin: "1"))
     }
 }
