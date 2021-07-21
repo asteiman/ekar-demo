@@ -29,6 +29,12 @@ struct VehicleData: Decodable {
         case year = "Model Year"
     }
     
+    init(year: String, make: String, model: String) {
+        self.year = year
+        self.make = make
+        self.model = model
+    }
+    
     init(from decoder: Decoder) throws {
         let outerContainer = try decoder.container(keyedBy: OuterKeys.self)
         let deepDataContainer = try outerContainer.nestedContainer(keyedBy: DeepDataKeys.self,
@@ -38,4 +44,12 @@ struct VehicleData: Decodable {
         self.model = try deepDataContainer.decode(String.self, forKey: .model)
         self.year = try deepDataContainer.decode(String.self, forKey: .year)
     }
+}
+
+extension Vehicle {
+    static let dummy = Vehicle(vin: "123", data: VehicleData.dummy, lat: 1, long: 2)
+}
+
+extension VehicleData {
+    static let dummy = VehicleData(year: "2020", make: "Honda", model: "Civic")
 }
