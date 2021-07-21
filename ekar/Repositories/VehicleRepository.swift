@@ -17,6 +17,7 @@ class VehicleRepository: VehicleRepositoryProtocol {
     let session: URLSession
     let baseURL: String
     let bgQueue = DispatchQueue(label: "bg_queue")
+    private var cachedVehicles = [String: Vehicle]()
     
     init(session: URLSession, baseURL: String) {
         self.session = session
@@ -24,13 +25,19 @@ class VehicleRepository: VehicleRepositoryProtocol {
     }
     
     func getBy(vin: String) -> AnyPublisher<Vehicle, GenericError> {
+        if let cachedVehicle = cachedVehicles[vin] {
+            return Just(cachedVehicle).setFailureType(to: GenericError.self).eraseToAnyPublisher()
+        }
+        
         return call(endpoint: API.vehicle(key: "b06xiwql9_1hdmgou3u_n0uqktk51", vin: vin))
             .mapError { _ in
                 GenericError.network
             }
             .map({ (vehicleData: VehicleData) in
                 let coordinates = self.getCoordinatesBy(vin: vin)
-                return Vehicle(vin: vin, data: vehicleData, lat: coordinates.0, long: coordinates.1)
+                let vehicle = Vehicle(vin: vin, data: vehicleData, lat: coordinates.0, long: coordinates.1)
+                self.cachedVehicles[vin] = vehicle
+                return vehicle
             })
             .eraseToAnyPublisher()
     }
