@@ -10,7 +10,14 @@ import SwiftUI
 struct VehicleView: View {
     @State var sliderValue: Float = 0
     @State var index = 0
-    var images = ["car"]
+    var images = ["car", "car", "car"]
+    
+    @ObservedObject var viewModel: VehicleViewModel
+    
+    init(viewModel: VehicleViewModel) {
+        self.viewModel = viewModel
+        UINavigationBar.appearance().barTintColor = .white
+    }
     
     var body: some View {
         GeometryReader { geometry in
@@ -82,13 +89,13 @@ struct VehicleView: View {
                                         //
                                     }
                                     .padding(EdgeInsets(top: 6, leading: 10, bottom: 6, trailing: 10))
-                                    .foregroundColor(.black)
+                                    .foregroundColor(Color(UIColor(red: 0.37, green: 0.80, blue: 0.98, alpha: 1.00)))
                                     .background(Color.white)
                                     .clipped()
                                     .cornerRadius(8)
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 8)
-                                            .stroke(Color.black, lineWidth: 1))
+                                            .stroke(Color(UIColor(red: 0.37, green: 0.80, blue: 0.98, alpha: 1.00)), lineWidth: 1))
                                 }
                             }
                             Spacer()
@@ -127,7 +134,7 @@ struct VehicleView: View {
                     Spacer()
                     VStack(alignment: .leading) {
                         HStack {
-                            Image(systemName: "warning")
+                            Image(systemName: "ellipsis.circle")
                             VStack {
                                 Text("Nissan Micra")
                                 Text("HATCHBACK")
@@ -136,16 +143,25 @@ struct VehicleView: View {
                         Button("Proceed with your selection") {
                             print("tapped!")
                         }
+                        .frame(width: 280)
                         .padding(EdgeInsets(top: 16, leading: 20, bottom: 16, trailing: 20))
                         .foregroundColor(.white)
-                        .background(Color(UIColor(red: 0.45, green: 0.78, blue: 0.96, alpha: 1.00)))                            .clipped()
+                        .background(Color(UIColor(red: 0.45, green: 0.78, blue: 0.96, alpha: 1.00))).clipped()
                         .cornerRadius(8)
                     }
+                    .padding(.top, 32)
+                    .padding(.bottom, 32)
                     Spacer()
                 }.background(
                     Rectangle()
                         .fill(Color.white)
-                        .shadow(color: .gray.opacity(0.5), radius: 2, x: 0, y: -1))
+                        .shadow(color: .gray.opacity(0.2), radius: 1, x: 0, y: -2))
+            }
+        }.toolbar {
+            ToolbarItem(placement: .principal) {
+                Image("logo")
+                    .resizable()
+                    .frame(width: 80, height: 40, alignment: .center)
             }
         }
     }

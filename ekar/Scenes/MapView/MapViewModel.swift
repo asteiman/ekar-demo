@@ -14,8 +14,10 @@ class MapViewModel: ObservableObject {
     @Published var isLoading = false
     private var availableVehicles: [Vehicle] = []
     private var cancellable: AnyCancellable?
+    let repository: VehicleRepositoryProtocol
     
-    init() {
+    init(repository: VehicleRepositoryProtocol) {
+        self.repository = repository
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { timer in
             self.loadVehicles()
         }
@@ -28,7 +30,7 @@ class MapViewModel: ObservableObject {
         
         vinNumbersToRequest.forEach { vinNumber in
             requests.append(
-                VehicleRepository(session: .shared, baseURL: "https://api.carsxe.com").getBy(vin: vinNumber)
+                self.repository.getBy(vin: vinNumber)
             )
         }
         let downstream = Publishers.MergeMany(requests).collect()
@@ -39,7 +41,7 @@ class MapViewModel: ObservableObject {
         }, receiveValue: { returnedVehicles in
             self.availableVehicles = returnedVehicles
             self.mapAnnotations = returnedVehicles.map({ vehicle in
-                MapAnnotation(title: vehicle.data.make + " " + vehicle.data.model,
+                MapAnnotation(id: vehicle.vin, title: vehicle.data.make + " " + vehicle.data.model,
                                subtitle: nil,
                                coordinate: .init(latitude: vehicle.lat, longitude: vehicle.long))
             })

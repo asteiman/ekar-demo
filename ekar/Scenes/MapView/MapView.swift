@@ -13,10 +13,11 @@ struct MapView: View {
     @ObservedObject var viewModel: MapViewModel
     
     @State var isActive: Bool = false
-    @State var selectedAnnotation: MKAnnotation?
+    @State var selectedAnnotation: MapAnnotation?
     
     init(viewModel: MapViewModel) {
         self.viewModel = viewModel
+        UINavigationBar.appearance().barTintColor = .white
     }
     
     var body: some View {
@@ -25,12 +26,11 @@ struct MapView: View {
         } else {
             NavigationView {
                 VStack {
-                    NavigationLink(destination: VehicleView(), isActive: self.$isActive) {
-                            EmptyView()
-                        }
+                    NavigationLink(destination: VehicleView(viewModel: VehicleViewModel(repository: viewModel.repository, vin: selectedAnnotation?.id)), isActive: self.$isActive) {
+                        EmptyView()
+                    }
                     MapViewRepresentable(annotations: viewModel.mapAnnotations, isActive: self.$isActive, selectedAnnotation: self.$selectedAnnotation)
                 }
-                .navigationBarTitle("EKAR", displayMode: .inline)
                 .navigationBarTitle("", displayMode: .inline)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
@@ -48,7 +48,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     
     var annotations: [MapAnnotation]
     @Binding var isActive: Bool
-    @Binding var selectedAnnotation: MKAnnotation?
+    @Binding var selectedAnnotation: MapAnnotation?
     
     func makeCoordinator() -> MapViewCoordinator {
         MapViewCoordinator(self)
@@ -58,11 +58,11 @@ struct MapViewRepresentable: UIViewRepresentable {
         let view = MKMapView(frame: .zero)
         
         let coordinate = CLLocationCoordinate2D(
-                    latitude: 25.0709248, longitude: 55.1429923)
+            latitude: 25.0709248, longitude: 55.1429923)
         let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
-                let region =
-                    MKCoordinateRegion(center: coordinate, span: span)
-                view.setRegion(region, animated: true)
+        let region =
+            MKCoordinateRegion(center: coordinate, span: span)
+        view.setRegion(region, animated: true)
         
         return view
     }
@@ -76,6 +76,6 @@ struct MapViewRepresentable: UIViewRepresentable {
 
 struct mapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(viewModel: MapViewModel())
+        MapView(viewModel: MapViewModel(repository: PreviewVehicleRepository()))
     }
 }

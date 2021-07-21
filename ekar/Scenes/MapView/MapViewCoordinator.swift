@@ -39,9 +39,9 @@ class MapViewCoordinator: NSObject, MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        if !(view.annotation is MKClusterAnnotation) {
+        if let mapAnnotation = view.annotation as? MapAnnotation {
             self.mapViewController.isActive = true
-            self.mapViewController.selectedAnnotation = view.annotation
+            self.mapViewController.selectedAnnotation = mapAnnotation
         }
     }
 }

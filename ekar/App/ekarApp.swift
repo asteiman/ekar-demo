@@ -11,7 +11,7 @@ import SwiftUI
 struct ekarApp: App {
     var body: some Scene {
         WindowGroup {
-            MapView(viewModel: MapViewModel())
+            MapView(viewModel: MapViewModel(repository: VehicleRepository(session: .shared, baseURL: "https://api.carsxe.com")))
         }
     }
 }
