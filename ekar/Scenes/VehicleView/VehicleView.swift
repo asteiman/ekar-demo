@@ -17,11 +17,12 @@ struct VehicleView: View {
     init(viewModel: VehicleViewModel) {
         self.viewModel = viewModel
         UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().isTranslucent = false
     }
     
     var body: some View {
         GeometryReader { geometry in
-            VStack {
+            VStack(spacing: 0) {
                 ScrollView {
                     VStack {
                         PagingView(index: $index.animation(), maxIndex: images.count - 1) {
@@ -36,7 +37,7 @@ struct VehicleView: View {
                         .frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
                         Group {
                             HStack {
-                                Text("Year - 2020")
+                                Text("Year - \(viewModel.vehicle?.data.year ?? "")")
                                 Spacer()
                                 Text("Available colors")
                                 Circle()
@@ -105,16 +106,57 @@ struct VehicleView: View {
                         VStack(alignment: .leading) {
                             Text("About the vehicle")
                             HStack {
-                                Rectangle()
-                                Rectangle()
-                                Rectangle()
-                                Rectangle()
+                                VStack(alignment: .center, spacing: 0) {
+                                    Image("attribute-type")
+                                        .resizable().frame(width: 40, height: 40).scaledToFill()
+                                    Text(viewModel.vehicle?.data.cylinders ?? "")
+                                }.inExpandingRectangle()
+                                .padding(.top, 8)
+                                .padding(.bottom, 8)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .fill(Color(UIColor(red: 0.89, green: 0.96, blue: 1.00, alpha: 1.00)))
+                                )
+                                VStack(alignment: .center, spacing: 0) {
+                                    Image("attribute-seats")
+                                        .resizable().frame(width: 40, height: 40).scaledToFill()
+                                    Text(viewModel.vehicle?.data.doors ?? "")
+                                }
+                                .inExpandingRectangle()
+                                .padding(.top, 8)
+                                .padding(.bottom, 8)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .fill(Color(UIColor(red: 0.89, green: 0.96, blue: 1.00, alpha: 1.00)))
+                                )
+                                VStack(alignment: .center, spacing: 0) {
+                                    Image("attribute-gear")
+                                        .resizable().frame(width: 40, height: 40).scaledToFill()
+                                    Text(viewModel.vehicle?.data.type ?? "")
+                                }
+                                .inExpandingRectangle()
+                                .padding(.top, 8)
+                                .padding(.bottom, 8)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .fill(Color(UIColor(red: 0.89, green: 0.96, blue: 1.00, alpha: 1.00)))
+                                )
+                                VStack(alignment: .center, spacing: 0) {
+                                    Image("attribute-fuel")
+                                        .resizable().frame(width: 40, height: 40).scaledToFill()
+                                    Text(viewModel.vehicle?.data.fuelType ?? "")
+                                }
+                                .inExpandingRectangle()
+                                .padding(.top, 8)
+                                .padding(.bottom, 8)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .fill(Color(UIColor(red: 0.89, green: 0.96, blue: 1.00, alpha: 1.00)))
+                                )
                             }
                             Text("Key features")
                             FlexibleView(
-                                data: [
-                                    "Keyless Entry", "Bluetooth", "Power Windows", "ABS Breakes with EDB", "AUX / USB Jack", "AM / FM"
-                                ],
+                                data: viewModel.vehicle?.data.features ?? [],
                                 spacing: 8,
                                 alignment: .leading
                             ) { item in
@@ -135,11 +177,12 @@ struct VehicleView: View {
                     VStack(alignment: .leading) {
                         HStack {
                             Image(systemName: "ellipsis.circle")
-                            VStack {
-                                Text("Nissan Micra")
-                                Text("HATCHBACK")
+                            VStack(alignment: .leading) {
+                                Text("\(viewModel.vehicle?.data.make ?? "") \(viewModel.vehicle?.data.model ?? "")")
+                                Text(viewModel.vehicle?.data.type ?? "")
                             }
                         }
+                        Spacer().frame(height: 20)
                         Button("Proceed with your selection") {
                             print("tapped!")
                         }
@@ -170,5 +213,15 @@ struct VehicleView: View {
 struct VehicleView_Previews: PreviewProvider {
     static var previews: some View {
         VehicleView(viewModel: VehicleViewModel(repository: PreviewVehicleRepository(), vin: "1"))
+    }
+}
+
+extension View {
+    func inExpandingRectangle() -> some View {
+        ZStack {
+            Rectangle()
+                .fill(Color.clear)
+            self
+        }
     }
 }

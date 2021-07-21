@@ -44,7 +44,7 @@ class VehicleRepository: VehicleRepositoryProtocol {
     
     private func getCoordinatesBy(vin: String) -> (Double, Double) {
         let coordinates = ["JTDZN3EU0E3298500": (25.0695998, 55.1440724),
-                           "1FDWE37S7WHB57339": (25.0695998, 55.1430724)]
+                           "2HGEJ6675VH583695": (25.0695998, 55.1430724)]
         
         return coordinates[vin]!
     }

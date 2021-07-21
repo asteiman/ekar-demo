@@ -12,7 +12,6 @@ import Combine
 class MapViewModel: ObservableObject {
     @Published var mapAnnotations = [MapAnnotation]()
     @Published var isLoading = false
-    private var availableVehicles: [Vehicle] = []
     private var cancellable: AnyCancellable?
     let repository: VehicleRepositoryProtocol
     
@@ -25,7 +24,7 @@ class MapViewModel: ObservableObject {
     
     private func loadVehicles() {
         isLoading = true
-        let vinNumbersToRequest = ["JTDZN3EU0E3298500", "1FDWE37S7WHB57339"]
+        let vinNumbersToRequest = ["JTDZN3EU0E3298500", "2HGEJ6675VH583695"]
         var requests = [AnyPublisher<Vehicle, GenericError>]()
         
         vinNumbersToRequest.forEach { vinNumber in
@@ -39,7 +38,6 @@ class MapViewModel: ObservableObject {
             .sink(receiveCompletion: { _ in
                 self.isLoading = false
         }, receiveValue: { returnedVehicles in
-            self.availableVehicles = returnedVehicles
             self.mapAnnotations = returnedVehicles.map({ vehicle in
                 MapAnnotation(id: vehicle.vin, title: vehicle.data.make + " " + vehicle.data.model,
                                subtitle: nil,
