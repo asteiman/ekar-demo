@@ -14,6 +14,11 @@ struct Vehicle {
     var long: Double
 }
 
+struct VehicleContract {
+    let month: Int
+    let price: Float
+}
+
 struct VehicleData: Decodable {
     let year: String
     let make: String

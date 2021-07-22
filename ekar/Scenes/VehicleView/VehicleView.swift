@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct VehicleView: View {
-    @State var sliderValue: Float = 0
     @State var index = 0
     var images = ["car", "car", "car"]
     
@@ -52,13 +51,18 @@ struct VehicleView: View {
                                 Spacer()
                                 VStack(alignment: .trailing) {
                                     Text("Contract length")
-                                    Text("3 Months")
+                                    Text((self.viewModel.contractSliderValue == 0 ? "1" :  String(Int(self.viewModel.contractSliderValue))) + " Months")
                                 }
                             }
                             HStack {
                                 VStack(alignment: .leading) {
                                     Text("TENURE")
-                                    Text("1 to 9 Months")
+                                    HStack(spacing: 5) {
+                                        Text(String(viewModel.getMinMonths()))
+                                        Text("to")
+                                        Text(String(viewModel.getMaxMonths()))
+                                        Text("Months")
+                                    }
                                 }
                                 Spacer()
                                 Text("SAVINGS OF AED 1,500")
@@ -67,7 +71,7 @@ struct VehicleView: View {
                                     .clipShape(Capsule())
                             }
                             VStack {
-                                Slider(value: $sliderValue, in: 0...9, step: 3)
+                                Slider(value: $viewModel.contractSliderValue, in: 0...9, step: 3)
                                     .accentColor(Color.green).padding(.leading, 5)
                                     .padding(.trailing, 5)
                                 HStack {
@@ -80,6 +84,7 @@ struct VehicleView: View {
                                     Text("9")
                                 }.padding(.leading, 16)
                                 .padding(.trailing, 16)
+                                .padding(.bottom, 8)
                                 HStack {
                                     VStack(alignment: .leading) {
                                         Text("BOOKING FEE")
@@ -212,7 +217,7 @@ struct VehicleView: View {
 
 struct VehicleView_Previews: PreviewProvider {
     static var previews: some View {
-        VehicleView(viewModel: VehicleViewModel(repository: PreviewVehicleRepository(), vin: "1"))
+        VehicleView(viewModel: VehicleViewModel(vehicleRepository: PreviewVehicleRepository(), contractRepository: ContractRepository(), vin: "1"))
     }
 }
 
