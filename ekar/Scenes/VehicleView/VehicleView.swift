@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Sliders
 
 struct VehicleView: View {
     @State var index = 0
@@ -25,14 +26,14 @@ struct VehicleView: View {
                 ScrollView {
                     VStack {
                         PagingView(index: $index.animation(), maxIndex: images.count - 1) {
-                                        ForEach(self.images, id: \.self) { imageName in
-                                            Image(imageName)
-                                                .resizable()
-                                                .scaledToFill()
-                                        }
-                                    }
-                                    .aspectRatio(4/3, contentMode: .fit)
-                                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                            ForEach(self.images, id: \.self) { imageName in
+                                Image(imageName)
+                                    .resizable()
+                                    .scaledToFill()
+                            }
+                        }
+                        .aspectRatio(4/3, contentMode: .fit)
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
                         .frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
                         Group {
                             HStack {
@@ -46,12 +47,12 @@ struct VehicleView: View {
                             HStack {
                                 VStack(alignment: .leading) {
                                     Text("Base Price")
-                                    Text("1500 AED / month")
+                                    Text(String(self.viewModel.getMonthlyFee()) + " AED / month")
                                 }
                                 Spacer()
                                 VStack(alignment: .trailing) {
                                     Text("Contract length")
-                                    Text((self.viewModel.contractSliderValue == 0 ? "1" :  String(Int(self.viewModel.contractSliderValue))) + " Months")
+                                    Text(String(viewModel.getSelectedMonth()) + " Months")
                                 }
                             }
                             HStack {
@@ -65,14 +66,28 @@ struct VehicleView: View {
                                     }
                                 }
                                 Spacer()
-                                Text("SAVINGS OF AED 1,500")
-                                    .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
-                                    .background(Color(UIColor(red: 0.93, green: 0.32, blue: 0.44, alpha: 1.00)))
-                                    .clipShape(Capsule())
+                                if viewModel.getSavingsAmount() != 0 {
+                                    Text("SAVINGS OF AED " + String(viewModel.getSavingsAmount()))
+                                        .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                                        .background(Color(UIColor(red: 0.93, green: 0.32, blue: 0.44, alpha: 1.00)))
+                                        .clipShape(Capsule())
+                                }
                             }
                             VStack {
-                                Slider(value: $viewModel.contractSliderValue, in: 0...9, step: 3)
-                                    .accentColor(Color.green).padding(.leading, 5)
+                                ValueSlider(value: $viewModel.contractSliderValue, in: 0...Float(viewModel.getMaxMonths()), step: 3)
+                                    .valueSliderStyle(
+                                        HorizontalValueSliderStyle(
+                                            track: Rectangle()
+                                                .foregroundColor(Color(UIColor(red: 0.43, green: 0.87, blue: 0.98, alpha: 1.00)))
+                                                .frame(height: 10)
+                                                .cornerRadius(5),
+                                            thumb: Circle()
+                                            .strokeBorder(Color(UIColor(red: 0.43, green: 0.87, blue: 0.98, alpha: 1.00)), lineWidth: 8)
+                                            .background(Circle().foregroundColor(Color.white)),             thumbSize: CGSize(width: 30, height: 30)
+                                        )
+                                    )
+                                    .cornerRadius(8)
+                                    .padding(.leading, 5)
                                     .padding(.trailing, 5)
                                 HStack {
                                     Text("1")

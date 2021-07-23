@@ -33,9 +33,8 @@ class VehicleViewModel: ObservableObject {
         }
         
         $contractSliderValue
-          .dropFirst(1)
             .sink(receiveValue: calculateContract(duration:))
-          .store(in: &disposables)
+            .store(in: &disposables)
     }
     
     private func calculateContract(duration: Float) {
@@ -48,5 +47,24 @@ class VehicleViewModel: ObservableObject {
     
     func getMaxMonths() -> Int {
         return prices.last?.month ?? 0
+    }
+    
+    func getMonthlyFee() -> Float {
+        return prices.first(where: { contract in
+            contract.month == getSelectedMonth()
+        })?.price ?? 0
+    }
+    
+    func getSelectedMonth() -> Int {
+        return contractSliderValue == 0 ? 1 : Int(contractSliderValue)
+    }
+    
+    func getSavingsAmount() -> Float {
+        guard contractSliderValue != 0 else { return 0 }
+        guard let firstMonthlyFee = prices.first?.price else { return 0 }
+
+        let currentMonthlyFee = getMonthlyFee()
+        let diff = firstMonthlyFee - currentMonthlyFee
+        return diff * contractSliderValue
     }
 }

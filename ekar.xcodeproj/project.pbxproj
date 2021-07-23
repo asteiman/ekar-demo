@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,7 @@
 		D98D6FA926A7099400DF3221 /* FlexibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D6FA826A7099400DF3221 /* FlexibleView.swift */; };
 		D9B025B826A2CF1E00CE3DD4 /* VehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B025B726A2CF1E00CE3DD4 /* VehicleView.swift */; };
 		D9FBFC2D26A99A110089479A /* ContractRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBFC2C26A99A110089479A /* ContractRepository.swift */; };
+		D9FBFC3026AA7C8E0089479A /* Sliders in Frameworks */ = {isa = PBXBuildFile; productRef = D9FBFC2F26AA7C8E0089479A /* Sliders */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9FBFC3026AA7C8E0089479A /* Sliders in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +251,9 @@
 			dependencies = (
 			);
 			name = ekar;
+			packageProductDependencies = (
+				D9FBFC2F26AA7C8E0089479A /* Sliders */,
+			);
 			productName = ekar;
 			productReference = D955CAB926A13EE400A82394 /* ekar.app */;
 			productType = "com.apple.product-type.application";
@@ -320,6 +325,9 @@
 				Base,
 			);
 			mainGroup = D955CAB026A13EE400A82394;
+			packageReferences = (
+				D9FBFC2E26AA7C8E0089479A /* XCRemoteSwiftPackageReference "swiftui-sliders" */,
+			);
 			productRefGroup = D955CABA26A13EE400A82394 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -696,6 +704,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D9FBFC2E26AA7C8E0089479A /* XCRemoteSwiftPackageReference "swiftui-sliders" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spacenation/swiftui-sliders.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D9FBFC2F26AA7C8E0089479A /* Sliders */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D9FBFC2E26AA7C8E0089479A /* XCRemoteSwiftPackageReference "swiftui-sliders" */;
+			productName = Sliders;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D955CAB126A13EE400A82394 /* Project object */;
 }
