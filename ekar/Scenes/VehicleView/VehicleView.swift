@@ -7,10 +7,12 @@
 
 import SwiftUI
 import Sliders
+import ToastUI
 
 struct VehicleView: View {
-    @State var index = 0
     var images = ["car", "car", "car"]
+    @State private var imageIndex = 0
+    @State private var presentingToast: Bool = false
     
     @ObservedObject var viewModel: VehicleViewModel
     
@@ -25,7 +27,7 @@ struct VehicleView: View {
             VStack(spacing: 0) {
                 ScrollView {
                     VStack {
-                        PagingView(index: $index.animation(), maxIndex: images.count - 1) {
+                        PagingView(index: $imageIndex.animation(), maxIndex: images.count - 1) {
                             ForEach(self.images, id: \.self) { imageName in
                                 Image(imageName)
                                     .resizable()
@@ -107,7 +109,7 @@ struct VehicleView: View {
                                     }
                                     Spacer()
                                     Button("How contract works?") {
-                                        //
+                                        presentingToast = true
                                     }
                                     .padding(EdgeInsets(top: 6, leading: 10, bottom: 6, trailing: 10))
                                     .foregroundColor(Color(UIColor(red: 0.37, green: 0.80, blue: 0.98, alpha: 1.00)))
@@ -117,6 +119,11 @@ struct VehicleView: View {
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 8)
                                             .stroke(Color(UIColor(red: 0.37, green: 0.80, blue: 0.98, alpha: 1.00)), lineWidth: 1))
+                                    .toast(isPresented: $presentingToast, dismissAfter: 2.0) {
+                                          print("Toast dismissed")
+                                        } content: {
+                                            ToastView("How contract works?")
+                                        }
                                 }
                             }
                             Spacer()
