@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D94C703F26AAB4C10054F396 /* PreviewImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C703E26AAB4C10054F396 /* PreviewImagesRepository.swift */; };
+		D94C704226AABB7B0054F396 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D94C704126AABB7B0054F396 /* SDWebImageSwiftUI */; };
+		D94C704426AAD1520054F396 /* ImagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C704326AAD1520054F396 /* ImagesResponse.swift */; };
 		D955CABD26A13EE400A82394 /* ekarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CABC26A13EE400A82394 /* ekarApp.swift */; };
 		D955CAC126A13EE500A82394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D955CAC026A13EE500A82394 /* Assets.xcassets */; };
 		D955CAC426A13EE500A82394 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D955CAC326A13EE500A82394 /* Preview Assets.xcassets */; };
@@ -28,6 +31,7 @@
 		D9FBFC2D26A99A110089479A /* ContractRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBFC2C26A99A110089479A /* ContractRepository.swift */; };
 		D9FBFC3026AA7C8E0089479A /* Sliders in Frameworks */ = {isa = PBXBuildFile; productRef = D9FBFC2F26AA7C8E0089479A /* Sliders */; };
 		D9FBFC3526AA8E6A0089479A /* ToastUI in Frameworks */ = {isa = PBXBuildFile; productRef = D9FBFC3426AA8E6A0089479A /* ToastUI */; };
+		D9FBFC3726AAA77E0089479A /* ImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBFC3626AAA77E0089479A /* ImagesRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D94C703E26AAB4C10054F396 /* PreviewImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImagesRepository.swift; sourceTree = "<group>"; };
+		D94C704326AAD1520054F396 /* ImagesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesResponse.swift; sourceTree = "<group>"; };
 		D955CAB926A13EE400A82394 /* ekar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ekar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D955CABC26A13EE400A82394 /* ekarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ekarApp.swift; sourceTree = "<group>"; };
 		D955CAC026A13EE500A82394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +79,7 @@
 		D98D6FA826A7099400DF3221 /* FlexibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleView.swift; sourceTree = "<group>"; };
 		D9B025B726A2CF1E00CE3DD4 /* VehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleView.swift; sourceTree = "<group>"; };
 		D9FBFC2C26A99A110089479A /* ContractRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractRepository.swift; sourceTree = "<group>"; };
+		D9FBFC3626AAA77E0089479A /* ImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D94C704226AABB7B0054F396 /* SDWebImageSwiftUI in Frameworks */,
 				D9FBFC3526AA8E6A0089479A /* ToastUI in Frameworks */,
 				D9FBFC3026AA7C8E0089479A /* Sliders in Frameworks */,
 			);
@@ -142,6 +150,7 @@
 			children = (
 				D955CAC326A13EE500A82394 /* Preview Assets.xcassets */,
 				D975B31926A7DA1B00637440 /* PreviewVehicleRepository.swift */,
+				D94C703E26AAB4C10054F396 /* PreviewImagesRepository.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -188,6 +197,7 @@
 			children = (
 				D955CAF026A173E400A82394 /* MapAnnotation.swift */,
 				D955CAFD26A1825B00A82394 /* Vehicle.swift */,
+				D94C704326AAD1520054F396 /* ImagesResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -222,6 +232,7 @@
 			children = (
 				D955CAFB26A1820C00A82394 /* VehicleRepository.swift */,
 				D9FBFC2C26A99A110089479A /* ContractRepository.swift */,
+				D9FBFC3626AAA77E0089479A /* ImagesRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -256,6 +267,7 @@
 			packageProductDependencies = (
 				D9FBFC2F26AA7C8E0089479A /* Sliders */,
 				D9FBFC3426AA8E6A0089479A /* ToastUI */,
+				D94C704126AABB7B0054F396 /* SDWebImageSwiftUI */,
 			);
 			productName = ekar;
 			productReference = D955CAB926A13EE400A82394 /* ekar.app */;
@@ -331,6 +343,7 @@
 			packageReferences = (
 				D9FBFC2E26AA7C8E0089479A /* XCRemoteSwiftPackageReference "swiftui-sliders" */,
 				D9FBFC3326AA8E6A0089479A /* XCRemoteSwiftPackageReference "ToastUI" */,
+				D94C704026AABB7B0054F396 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = D955CABA26A13EE400A82394 /* Products */;
 			projectDirPath = "";
@@ -376,16 +389,19 @@
 			files = (
 				D955CAFE26A1825B00A82394 /* Vehicle.swift in Sources */,
 				D955CAEE26A16B0100A82394 /* MapViewCoordinator.swift in Sources */,
+				D94C704426AAD1520054F396 /* ImagesResponse.swift in Sources */,
 				D955CAF126A173E400A82394 /* MapAnnotation.swift in Sources */,
 				D9B025B826A2CF1E00CE3DD4 /* VehicleView.swift in Sources */,
 				D955CAFC26A1820C00A82394 /* VehicleRepository.swift in Sources */,
 				D955CAF726A1817000A82394 /* APICall.swift in Sources */,
 				D98D6FA726A6CFA300DF3221 /* PagingView.swift in Sources */,
+				D9FBFC3726AAA77E0089479A /* ImagesRepository.swift in Sources */,
 				D98D6FA926A7099400DF3221 /* FlexibleView.swift in Sources */,
 				D955CABD26A13EE400A82394 /* ekarApp.swift in Sources */,
 				D9FBFC2D26A99A110089479A /* ContractRepository.swift in Sources */,
 				D975B31A26A7DA1B00637440 /* PreviewVehicleRepository.swift in Sources */,
 				D955CAE926A13FB700A82394 /* MapView.swift in Sources */,
+				D94C703F26AAB4C10054F396 /* PreviewImagesRepository.swift in Sources */,
 				D955CAEB26A142B900A82394 /* MapViewModel.swift in Sources */,
 				D975B31826A7C99100637440 /* VehicleViewModel.swift in Sources */,
 				D955CAF926A181AE00A82394 /* WebRepository.swift in Sources */,
@@ -710,6 +726,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D94C704026AABB7B0054F396 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
 		D9FBFC2E26AA7C8E0089479A /* XCRemoteSwiftPackageReference "swiftui-sliders" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/spacenation/swiftui-sliders.git";
@@ -729,6 +753,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D94C704126AABB7B0054F396 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D94C704026AABB7B0054F396 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
 		D9FBFC2F26AA7C8E0089479A /* Sliders */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D9FBFC2E26AA7C8E0089479A /* XCRemoteSwiftPackageReference "swiftui-sliders" */;

@@ -26,7 +26,7 @@ struct MapView: View {
         } else {
             NavigationView {
                 VStack {
-                    NavigationLink(destination: VehicleView(viewModel: VehicleViewModel(vehicleRepository: viewModel.repository, contractRepository: ContractRepository(), vin: selectedAnnotation?.id)), isActive: self.$isActive) {
+                    NavigationLink(destination: VehicleView(viewModel: VehicleViewModel(vehicleRepository: viewModel.repository, contractRepository: ContractRepository(), imagesRepository: ImagesRepository(session: .shared, baseURL: "https://api.carsxe.com"), vin: selectedAnnotation?.id)), isActive: self.$isActive) {
                         EmptyView()
                     }
                     MapViewRepresentable(annotations: viewModel.mapAnnotations, isActive: self.$isActive, selectedAnnotation: self.$selectedAnnotation)

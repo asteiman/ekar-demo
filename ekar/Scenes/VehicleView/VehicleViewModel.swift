@@ -11,26 +11,40 @@ import Combine
 class VehicleViewModel: ObservableObject {
     
     @Published var contractSliderValue: Float = 0
-    @Published var isLoading = true
+    @Published var imagesLoading = true
     @Published var vehicle: Vehicle?
     @Published var prices: [VehicleContract] = []
+    @Published var images: [String] = []
     private var disposables = Set<AnyCancellable>()
     private let contractRepository: ContractRepositoryProtocol
+    private let imagesRepository: ImagesRepositoryProtocol
     private let vin: String?
     
-    init(vehicleRepository: VehicleRepositoryProtocol, contractRepository: ContractRepositoryProtocol, vin: String?) {
+    init(vehicleRepository: VehicleRepositoryProtocol,
+         contractRepository: ContractRepositoryProtocol,
+         imagesRepository: ImagesRepositoryProtocol,
+         vin: String?) {
         
         self.vin = vin
         self.contractRepository = contractRepository
+        self.imagesRepository = imagesRepository
         
         if let vin = vin {
             vehicleRepository.getBy(vin: vin).sink { _ in
-                self.isLoading = false
+                //
             } receiveValue: { vehicle in
                 self.vehicle = vehicle
             }
             .store(in: &disposables)
         }
+        
+        $vehicle.drop(while: { $0 == nil} ).flatMap { vehicle in
+            return imagesRepository.getBy(make: vehicle!.data.make, model: vehicle!.data.model)
+        }.sink(receiveCompletion: { _ in
+        }, receiveValue: { receivedImages in
+            self.imagesLoading = false
+            self.images = receivedImages
+        }).store(in: &disposables)
         
         $contractSliderValue
             .sink(receiveValue: calculateContract(duration:))

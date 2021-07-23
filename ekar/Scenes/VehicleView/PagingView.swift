@@ -23,7 +23,7 @@ struct PagingView<Content>: View where Content: View {
     }
 
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
+        ZStack(alignment: .bottom) {
             GeometryReader { geometry in
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 0) {
@@ -79,7 +79,8 @@ struct PageControl: View {
         HStack(spacing: 8) {
             ForEach(0...maxIndex, id: \.self) { index in
                 Circle()
-                    .fill(index == self.index ? Color.white : Color.gray)
+                    .strokeBorder(Color(UIColor(red: 0.43, green: 0.87, blue: 0.98, alpha: 1.00)), lineWidth: 1)
+                    .background(Circle().foregroundColor(index == self.index ? Color(UIColor(red: 0.43, green: 0.87, blue: 0.98, alpha: 1.00)) : Color.white))
                     .frame(width: 8, height: 8)
             }
         }

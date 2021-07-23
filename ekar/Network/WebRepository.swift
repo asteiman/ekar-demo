@@ -11,7 +11,6 @@ import Combine
 protocol WebRepository {
     var session: URLSession { get }
     var baseURL: String { get }
-    var bgQueue: DispatchQueue { get }
 }
 
 extension WebRepository {
@@ -19,6 +18,8 @@ extension WebRepository {
         guard let request = try? endpoint.urlRequest(baseURL: baseURL) else {
             return Fail(error: APIError.invalidURL).eraseToAnyPublisher()
         }
+        
+        print(request.url!.absoluteURL)
 
         return session.dataTaskPublisher(for: request)
             .requestJSON(httpCodes: httpCodes)

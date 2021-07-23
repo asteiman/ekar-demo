@@ -8,9 +8,9 @@
 import SwiftUI
 import Sliders
 import ToastUI
+import SDWebImageSwiftUI
 
 struct VehicleView: View {
-    var images = ["car", "car", "car"]
     @State private var imageIndex = 0
     @State private var presentingToast: Bool = false
     
@@ -27,16 +27,23 @@ struct VehicleView: View {
             VStack(spacing: 0) {
                 ScrollView {
                     VStack {
-                        PagingView(index: $imageIndex.animation(), maxIndex: images.count - 1) {
-                            ForEach(self.images, id: \.self) { imageName in
-                                Image(imageName)
-                                    .resizable()
-                                    .scaledToFill()
+                        if viewModel.imagesLoading {
+                            ActivityIndicator($viewModel.imagesLoading)
+                                .aspectRatio(4/3, contentMode: .fit)
+                                .frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
+                        } else {
+                            PagingView(index: $imageIndex.animation(), maxIndex: max(0, viewModel.images.count - 1)) {
+                                ForEach(viewModel.images, id: \.self) { imageName in
+                                    WebImage(url: URL(string: imageName))
+                                        .resizable()
+                                        .indicator(.activity)
+                                        .transition(.fade(duration: 0.5))
+                                        .scaledToFill()
+                                }
                             }
+                            .aspectRatio(4/3, contentMode: .fit)
+                            .frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
                         }
-                        .aspectRatio(4/3, contentMode: .fit)
-                        .clipShape(RoundedRectangle(cornerRadius: 15))
-                        .frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
                         Group {
                             HStack {
                                 Text("Year - \(viewModel.vehicle?.data.year ?? "")")
@@ -84,8 +91,8 @@ struct VehicleView: View {
                                                 .frame(height: 10)
                                                 .cornerRadius(5),
                                             thumb: Circle()
-                                            .strokeBorder(Color(UIColor(red: 0.43, green: 0.87, blue: 0.98, alpha: 1.00)), lineWidth: 8)
-                                            .background(Circle().foregroundColor(Color.white)),             thumbSize: CGSize(width: 30, height: 30)
+                                                .strokeBorder(Color(UIColor(red: 0.43, green: 0.87, blue: 0.98, alpha: 1.00)), lineWidth: 8)
+                                                .background(Circle().foregroundColor(Color.white)),             thumbSize: CGSize(width: 30, height: 30)
                                         )
                                     )
                                     .cornerRadius(8)
@@ -120,10 +127,10 @@ struct VehicleView: View {
                                         RoundedRectangle(cornerRadius: 8)
                                             .stroke(Color(UIColor(red: 0.37, green: 0.80, blue: 0.98, alpha: 1.00)), lineWidth: 1))
                                     .toast(isPresented: $presentingToast, dismissAfter: 2.0) {
-                                          print("Toast dismissed")
-                                        } content: {
-                                            ToastView("How contract works?")
-                                        }
+                                        //
+                                    } content: {
+                                        ToastView("How contract works?")
+                                    }
                                 }
                             }
                             Spacer()
@@ -196,7 +203,7 @@ struct VehicleView: View {
                                     )
                                 
                             }
-                        }.padding(EdgeInsets(top: 10, leading: 16, bottom: 4, trailing: 16))
+                        }.padding(EdgeInsets(top: 10, leading: 16, bottom: 16, trailing: 16))
                     }
                 }
                 HStack {
@@ -239,7 +246,7 @@ struct VehicleView: View {
 
 struct VehicleView_Previews: PreviewProvider {
     static var previews: some View {
-        VehicleView(viewModel: VehicleViewModel(vehicleRepository: PreviewVehicleRepository(), contractRepository: ContractRepository(), vin: "1"))
+        VehicleView(viewModel: VehicleViewModel(vehicleRepository: PreviewVehicleRepository(), contractRepository: ContractRepository(), imagesRepository: PreviewImagesRepository(), vin: "1"))
     }
 }
 
