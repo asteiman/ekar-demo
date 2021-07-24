@@ -11,6 +11,7 @@ import ToastUI
 import SDWebImageSwiftUI
 
 struct VehicleView: View {
+    @State private var isModalPresented = false
     @State private var imageIndex = 0
     @State private var presentingToast: Bool = false
     
@@ -218,7 +219,10 @@ struct VehicleView: View {
                         }
                         Spacer().frame(height: 20)
                         Button("Proceed with your selection") {
-                            print("tapped!")
+                            self.isModalPresented = true
+                        }
+                        .fullScreenCover(isPresented: $isModalPresented) {
+                            OnBoardView()
                         }
                         .frame(width: 280)
                         .padding(EdgeInsets(top: 16, leading: 20, bottom: 16, trailing: 20))

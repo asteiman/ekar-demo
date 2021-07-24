@@ -10,6 +10,8 @@
 		D94C703F26AAB4C10054F396 /* PreviewImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C703E26AAB4C10054F396 /* PreviewImagesRepository.swift */; };
 		D94C704226AABB7B0054F396 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D94C704126AABB7B0054F396 /* SDWebImageSwiftUI */; };
 		D94C704426AAD1520054F396 /* ImagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C704326AAD1520054F396 /* ImagesResponse.swift */; };
+		D94C704726AAFD1F0054F396 /* OnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C704626AAFD1F0054F396 /* OnBoardView.swift */; };
+		D94C704926AAFD280054F396 /* OnBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C704826AAFD280054F396 /* OnBoardViewModel.swift */; };
 		D955CABD26A13EE400A82394 /* ekarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CABC26A13EE400A82394 /* ekarApp.swift */; };
 		D955CAC126A13EE500A82394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D955CAC026A13EE500A82394 /* Assets.xcassets */; };
 		D955CAC426A13EE500A82394 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D955CAC326A13EE500A82394 /* Preview Assets.xcassets */; };
@@ -54,6 +56,8 @@
 /* Begin PBXFileReference section */
 		D94C703E26AAB4C10054F396 /* PreviewImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImagesRepository.swift; sourceTree = "<group>"; };
 		D94C704326AAD1520054F396 /* ImagesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesResponse.swift; sourceTree = "<group>"; };
+		D94C704626AAFD1F0054F396 /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
+		D94C704826AAFD280054F396 /* OnBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardViewModel.swift; sourceTree = "<group>"; };
 		D955CAB926A13EE400A82394 /* ekar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ekar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D955CABC26A13EE400A82394 /* ekarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ekarApp.swift; sourceTree = "<group>"; };
 		D955CAC026A13EE500A82394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D94C704526AAFD100054F396 /* OnBoard */ = {
+			isa = PBXGroup;
+			children = (
+				D94C704626AAFD1F0054F396 /* OnBoardView.swift */,
+				D94C704826AAFD280054F396 /* OnBoardViewModel.swift */,
+			);
+			path = OnBoard;
+			sourceTree = "<group>";
+		};
 		D955CAB026A13EE400A82394 = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +189,7 @@
 		D955CAE726A13FA600A82394 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D94C704526AAFD100054F396 /* OnBoard */,
 				D9B025B626A2CF0E00CE3DD4 /* VehicleView */,
 				D955CAEC26A16AF200A82394 /* MapView */,
 			);
@@ -401,6 +415,8 @@
 				D9FBFC2D26A99A110089479A /* ContractRepository.swift in Sources */,
 				D975B31A26A7DA1B00637440 /* PreviewVehicleRepository.swift in Sources */,
 				D955CAE926A13FB700A82394 /* MapView.swift in Sources */,
+				D94C704926AAFD280054F396 /* OnBoardViewModel.swift in Sources */,
+				D94C704726AAFD1F0054F396 /* OnBoardView.swift in Sources */,
 				D94C703F26AAB4C10054F396 /* PreviewImagesRepository.swift in Sources */,
 				D955CAEB26A142B900A82394 /* MapViewModel.swift in Sources */,
 				D975B31826A7C99100637440 /* VehicleViewModel.swift in Sources */,
