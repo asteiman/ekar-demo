@@ -30,7 +30,7 @@ struct VehicleView: View {
                     VStack {
                         if viewModel.imagesLoading {
                             ActivityIndicator($viewModel.imagesLoading)
-                                .aspectRatio(4/3, contentMode: .fit)
+                                .aspectRatio(4/3, contentMode: .fill)
                                 .frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
                         } else {
                             PagingView(index: $imageIndex.animation(), maxIndex: max(0, viewModel.images.count - 1)) {
@@ -42,7 +42,7 @@ struct VehicleView: View {
                                         .scaledToFill()
                                 }
                             }
-                            .aspectRatio(4/3, contentMode: .fit)
+                            .aspectRatio(4/3, contentMode: .fill)
                             .frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
                         }
                         Group {
@@ -50,9 +50,9 @@ struct VehicleView: View {
                                 Text("Year - \(viewModel.vehicle?.data.year ?? "")")
                                 Spacer()
                                 Text("Available colors")
-                                Circle()
-                                    .fill(Color.red)
-                                    .frame(width: 10, height: 10)
+                                ForEach(viewModel.vehicle?.data.colors ?? [], id: \.self) { colorName in
+                                    ColorView(colorName: colorName)
+                                }
                             }
                             HStack {
                                 VStack(alignment: .leading) {
@@ -261,5 +261,20 @@ extension View {
                 .fill(Color.clear)
             self
         }
+    }
+}
+
+struct ColorView: View {
+    
+    private let colorName: String
+    
+    init(colorName: String) {
+        self.colorName = colorName
+    }
+    
+    var body: some View {
+        Circle()
+            .fill(Color(colorName))
+            .frame(width: 10, height: 10)
     }
 }

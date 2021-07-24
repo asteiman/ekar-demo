@@ -28,6 +28,7 @@ struct VehicleData: Decodable {
     let fuelType: String
     let cylinders: String
     let features: [String]
+    let colors = ["red", "blue"]
     
     enum OuterKeys: String, CodingKey {
         case deepdata
