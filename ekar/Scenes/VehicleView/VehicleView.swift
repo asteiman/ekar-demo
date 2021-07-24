@@ -222,7 +222,7 @@ struct VehicleView: View {
                             self.isModalPresented = true
                         }
                         .fullScreenCover(isPresented: $isModalPresented) {
-                            OnBoardView()
+                            OnBoardView(viewModel: OnBoardViewModel())
                         }
                         .frame(width: 280)
                         .padding(EdgeInsets(top: 16, leading: 20, bottom: 16, trailing: 20))
