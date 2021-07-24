@@ -211,7 +211,9 @@ struct VehicleView: View {
                     Spacer()
                     VStack(alignment: .leading) {
                         HStack {
-                            Image(systemName: "ellipsis.circle")
+                            Image(viewModel.vehicle?.data.make.lowercased() ?? "")
+                                .resizable()
+                                .frame(width: 40, height: 40)
                             VStack(alignment: .leading) {
                                 Text("\(viewModel.vehicle?.data.make ?? "") \(viewModel.vehicle?.data.model ?? "")")
                                 Text(viewModel.vehicle?.data.type ?? "")
