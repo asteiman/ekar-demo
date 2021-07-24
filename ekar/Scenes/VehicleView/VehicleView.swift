@@ -45,6 +45,7 @@ struct VehicleView: View {
                             .aspectRatio(4/3, contentMode: .fill)
                             .frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
                         }
+                        Spacer().frame(height: 30)
                         Group {
                             HStack {
                                 Text("Year - \(viewModel.vehicle?.data.year ?? "")")
@@ -100,14 +101,14 @@ struct VehicleView: View {
                                     .padding(.leading, 5)
                                     .padding(.trailing, 5)
                                 HStack {
-                                    Text("1")
-                                    Spacer()
-                                    Text("3")
-                                    Spacer()
-                                    Text("6")
-                                    Spacer()
-                                    Text("9")
-                                }.padding(.leading, 16)
+                                    ForEach(viewModel.prices.map ({$0.month}), id: \.self) { month in
+                                        Text(String(month))
+                                        if month != viewModel.prices.last?.month {
+                                            Spacer()
+                                        }
+                                    }
+                                }
+                                .padding(.leading, 16)
                                 .padding(.trailing, 16)
                                 .padding(.bottom, 8)
                                 HStack {
