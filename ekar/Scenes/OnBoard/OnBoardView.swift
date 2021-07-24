@@ -7,10 +7,10 @@
 
 import SwiftUI
 import UIKit
+import ToastUI
 
 struct OnBoardView: View {
     @State var imageIndex: Int = 0
-    @State private var comment: String = ""
     @State var showCaptureImageView: Bool = false
     @Environment(\.presentationMode) var presentationMode
     
@@ -54,9 +54,16 @@ struct OnBoardView: View {
                                 .foregroundColor(Color.black)
                             Spacer()
                         }
-                        TextField("asds", text: $comment)
+                        TextField("", text: $viewModel.comment)
+                            .foregroundColor(Color.black)
+                        Rectangle().foregroundColor(Color(UIColor(red: 0.91, green: 0.91, blue: 0.91, alpha: 1.00))).frame(height: 1)
                         Button("Submit") {
-                            //self.isModalPresented = true
+                            viewModel.validate()
+                        }
+                        .toast(isPresented: $viewModel.showSubmissionToast, dismissAfter: 2.0) {
+                            //
+                        } content: {
+                            ToastView(viewModel.isValid ? "Thank you for choosing Ekar" : "Validation Failure")
                         }
                         .frame(minWidth: 0, maxWidth: .infinity)
                         .padding(EdgeInsets(top: 16, leading: 20, bottom: 16, trailing: 20))
