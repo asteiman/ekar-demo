@@ -62,10 +62,7 @@ struct VehicleView: View {
                                 }
                                 Spacer()
                                 if viewModel.getSavingsAmount() != 0 {
-                                    Text("SAVINGS OF AED " + String(viewModel.getSavingsAmount()))
-                                        .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
-                                        .background(Color(UIColor(red: 0.93, green: 0.32, blue: 0.44, alpha: 1.00)))
-                                        .clipShape(Capsule())
+                                    VehicleSavingsBadgeView(amount: String(viewModel.getSavingsAmount()))
                                 }
                             }
                             VStack {
@@ -89,19 +86,7 @@ struct VehicleView: View {
                             Spacer()
                         }.padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
                     }.background(Color(UIColor(red: 0.89, green: 0.96, blue: 1.00, alpha: 1.00)))
-                    Group {
-                        VStack(alignment: .leading) {
-                            Text("About the vehicle")
-                            HStack {
-                                ForEach(viewModel.vehicleAttributes, id: \.imageName) { attribute in
-                                    VehicleAttributeView(imageName: attribute.imageName, label: attribute.label)
-                                }
-                            }
-                            .padding(.bottom, 10)
-                            Text("Key features")
-                            VehicleFeaturesView(features: viewModel.vehicle?.data.features ?? [])
-                        }.padding(EdgeInsets(top: 10, leading: 16, bottom: 16, trailing: 16))
-                    }
+                    VehicleAboutView(attributes: viewModel.vehicleAttributes, features: viewModel.vehicle?.data.features ?? [])
                 }
                 VehicleSubmitView(model: viewModel.vehicle, isModalPresented: $isModalPresented)
             }
