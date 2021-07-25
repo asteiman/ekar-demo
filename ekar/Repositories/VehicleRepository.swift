@@ -25,6 +25,7 @@ class VehicleRepository: VehicleRepositoryProtocol {
     }
     
     func getBy(vin: String) -> AnyPublisher<Vehicle, GenericError> {
+        // Simple memory cache to avoid fetching again, ideally this should be handled by another class/service
         if let cachedVehicle = cachedVehicles[vin] {
             return Just(cachedVehicle).setFailureType(to: GenericError.self).eraseToAnyPublisher()
         }
@@ -43,6 +44,7 @@ class VehicleRepository: VehicleRepositoryProtocol {
     }
     
     private func getCoordinatesBy(vin: String) -> (Double, Double) {
+        // Ideally the same API should return the vehicle details and the location of the vehicle in a particular moment
         let coordinates = ["JTDZN3EU0E3298500": (25.0695998, 55.1440724),
                            "2HGEJ6675VH583695": (25.0695998, 55.1430724)]
         

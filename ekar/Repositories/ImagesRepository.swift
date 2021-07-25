@@ -29,6 +29,7 @@ class ImagesRepository: ImagesRepositoryProtocol {
                 GenericError.network
             }
             .map({ (response: ImagesResponse) in
+                // Filtering returned urls to make sure all are served via HTTPS
                 return Array(response.images.map { $0.link }.filter { $0.contains("https://") }.prefix(5))
             })
             .eraseToAnyPublisher()

@@ -17,13 +17,12 @@ class MapViewModel: ObservableObject {
     
     init(repository: VehicleRepositoryProtocol) {
         self.repository = repository
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { timer in
-            self.loadVehicles()
-        }
+        self.loadVehicles()
     }
     
     private func loadVehicles() {
         isLoading = true
+        // Vin numbers hardcoded for simplicity
         let vinNumbersToRequest = ["JTDZN3EU0E3298500", "2HGEJ6675VH583695"]
         var requests = [AnyPublisher<Vehicle, GenericError>]()
         
@@ -32,6 +31,8 @@ class MapViewModel: ObservableObject {
                 self.repository.getBy(vin: vinNumber)
             )
         }
+        
+        // Parallels requests
         let downstream = Publishers.MergeMany(requests).collect()
         
         cancellable = downstream

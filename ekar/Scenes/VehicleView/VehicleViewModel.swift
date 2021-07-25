@@ -36,10 +36,12 @@ class VehicleViewModel: ObservableObject {
         self.imagesRepository = imagesRepository
         
         if let vin = vin {
+            // Fetch the vehicle object, the repository will handle the cache to avoid double network request
             vehicleRepository.getBy(vin: vin).sink { _ in
                 //
             } receiveValue: { vehicle in
                 self.vehicle = vehicle
+                // This should come from a config
                 self.vehicleAttributes = [
                     VehicleAttribute(imageName: "attribute-type", label: vehicle.data.cylinders + " cylinders"),
                     VehicleAttribute(imageName: "attribute-seats", label: vehicle.data.doors + " doors"),
@@ -50,6 +52,7 @@ class VehicleViewModel: ObservableObject {
             .store(in: &disposables)
         }
         
+        // After the vehicle object is set, fetch the images based on the make and model
         $vehicle.drop(while: { $0 == nil} ).flatMap { vehicle in
             return imagesRepository.getBy(make: vehicle!.data.make, model: vehicle!.data.model)
         }.sink(receiveCompletion: { _ in
@@ -58,12 +61,6 @@ class VehicleViewModel: ObservableObject {
             self.images = receivedImages
         }).store(in: &disposables)
         
-        $contractSliderValue
-            .sink(receiveValue: calculateContract(duration:))
-            .store(in: &disposables)
-    }
-    
-    private func calculateContract(duration: Float) {
         prices = contractRepository.getBy(vin: vin)
     }
     
