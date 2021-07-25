@@ -26,7 +26,7 @@ struct CarImageView: View {
                     .frame(width: 150, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
             }
             Text(label)
-                .foregroundColor(Color.black)
+                .nunitoFont(style: .body, weight: .regular)
         }
     }
 }

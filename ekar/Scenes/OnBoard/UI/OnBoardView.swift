@@ -22,17 +22,16 @@ struct OnBoardView: View {
                 ScrollView {
                     VStack(alignment: .center) {
                         Text("Please upload clear photos of the vehicle to avoid liability of any damages caused before starting your reservation")
-                            .foregroundColor(Color.black)
+                            .nunitoFont(style: .callout, weight: .regular)
                             .fixedSize(horizontal: false, vertical: true)
                             .padding(.bottom, 20)
                         CarImagesGridView(viewModel: viewModel, showCaptureImageView: $showCaptureImageView, imageIndex: $imageIndex)
                         HStack {
                             Text("Leave a comment:")
-                                .foregroundColor(Color.black)
+                                .nunitoFont(style: .caption1, weight: .bold)
                             Spacer()
                         }
                         TextField("", text: $viewModel.comment)
-                            .foregroundColor(Color.black)
                         Rectangle().foregroundColor(Color(UIColor(red: 0.91, green: 0.91, blue: 0.91, alpha: 1.00))).frame(height: 1)
                         MainButton(label: "Submit", action: {
                             viewModel.validate()

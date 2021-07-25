@@ -41,6 +41,12 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Ekar needs access to your camera to allow taking photos of the car</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Nunito-Bold.ttf</string>
+		<string>Nunito-Light.ttf</string>
+		<string>Nunito-Regular.ttf</string>
+	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

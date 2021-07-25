@@ -33,8 +33,10 @@ struct VehicleView: View {
                         Group {
                             HStack {
                                 Text("Year - \(viewModel.vehicle?.data.year ?? "")")
+                                    .nunitoFont(style: .caption1, weight: .regular)
                                 Spacer()
                                 Text("Available colors")
+                                    .nunitoFont(style: .caption1, weight: .regular)
                                 ForEach(viewModel.vehicle?.data.colors ?? [], id: \.self) { colorName in
                                     ColorBadgeView(colorName: colorName)
                                 }
@@ -42,23 +44,37 @@ struct VehicleView: View {
                             HStack {
                                 VStack(alignment: .leading) {
                                     Text("Base Price")
-                                    Text(String(self.viewModel.getMonthlyFee()) + " AED / month")
+                                        .nunitoFont(style: .callout, weight: .bold)
+                                    HStack(alignment: .firstTextBaseline, spacing: 5) {
+                                        Text(String(self.viewModel.getMonthlyFee()))
+                                            .nunitoFont(style: .title1, weight: .bold)
+                                        Text("AED / month")
+                                            .nunitoFont(style: .caption1, weight: .regular)
+                                    }
                                 }
                                 Spacer()
                                 VStack(alignment: .trailing) {
                                     Text("Contract length")
-                                    Text(String(viewModel.getSelectedMonth()) + " Months")
+                                        .nunitoFont(style: .callout, weight: .regular)
+                                    HStack(alignment: .firstTextBaseline, spacing: 5) {
+                                        Text(String(viewModel.getSelectedMonth()))
+                                            .nunitoFont(style: .title1, weight: .bold)
+                                        Text("Months")
+                                            .nunitoFont(style: .caption1, weight: .regular)
+                                    }
                                 }
                             }
                             HStack {
                                 VStack(alignment: .leading) {
                                     Text("TENURE")
+                                        .nunitoFont(style: .caption1, weight: .regular)
                                     HStack(spacing: 5) {
                                         Text(String(viewModel.getMinMonths()))
                                         Text("to")
                                         Text(String(viewModel.getMaxMonths()))
                                         Text("Months")
                                     }
+                                    .nunitoFont(style: .callout, weight: .bold)
                                 }
                                 Spacer()
                                 if viewModel.getSavingsAmount() != 0 {
@@ -70,7 +86,13 @@ struct VehicleView: View {
                                 HStack {
                                     VStack(alignment: .leading) {
                                         Text("BOOKING FEE")
-                                        Text("AED 120")
+                                            .nunitoFont(style: .caption2, weight: .bold)
+                                        HStack(alignment: .firstTextBaseline, spacing: 5) {
+                                            Text("AED")
+                                                .nunitoFont(style: .caption1, weight: .regular)
+                                            Text("120")
+                                                .nunitoFont(style: .title1, weight: .bold)
+                                        }
                                     }
                                     Spacer()
                                     SecondaryButton(label: "How contract works?") {

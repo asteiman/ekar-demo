@@ -17,6 +17,7 @@ struct VehicleAttributeView: View {
             Image(imageName)
                 .resizable().frame(width: 40, height: 40).scaledToFill()
             Text(label)
+                .nunitoFont(style: .caption1, weight: .regular)
         }
         .inExpandingRectangle()
         .padding(.top, 8)

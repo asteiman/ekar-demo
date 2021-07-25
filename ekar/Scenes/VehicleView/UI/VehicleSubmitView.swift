@@ -21,8 +21,14 @@ struct VehicleSubmitView: View {
                         .resizable()
                         .frame(width: 40, height: 40)
                     VStack(alignment: .leading) {
-                        Text("\(model?.data.make ?? "") \(model?.data.model ?? "")")
+                        HStack(spacing: 5) {
+                            Text("\(model?.data.make ?? "")")
+                                .nunitoFont(style: .body, weight: .bold)
+                            Text("\(model?.data.model ?? "")")
+                                .nunitoFont(style: .body, weight: .regular)
+                        }
                         Text(model?.data.type ?? "")
+                            .nunitoFont(style: .callout, weight: .regular)
                     }
                 }
                 Spacer().frame(height: 20)

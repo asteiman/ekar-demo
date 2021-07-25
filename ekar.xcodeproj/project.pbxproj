@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D929D4D126AD30E8007938D2 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D929D4C226AD30E8007938D2 /* Nunito-Light.ttf */; };
+		D929D4D226AD30E8007938D2 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D929D4C326AD30E8007938D2 /* Nunito-Regular.ttf */; };
+		D929D4DA26AD30E8007938D2 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = D929D4CB26AD30E8007938D2 /* OFL.txt */; };
+		D929D4DE26AD323A007938D2 /* NunitoFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D929D4DD26AD323A007938D2 /* NunitoFontModifier.swift */; };
+		D929D4E026AD3365007938D2 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D929D4DF26AD3365007938D2 /* Nunito-Bold.ttf */; };
 		D94C703F26AAB4C10054F396 /* PreviewImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C703E26AAB4C10054F396 /* PreviewImagesRepository.swift */; };
 		D94C704226AABB7B0054F396 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D94C704126AABB7B0054F396 /* SDWebImageSwiftUI */; };
 		D94C704426AAD1520054F396 /* ImagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C704326AAD1520054F396 /* ImagesResponse.swift */; };
@@ -73,6 +78,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D929D4C226AD30E8007938D2 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
+		D929D4C326AD30E8007938D2 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		D929D4CB26AD30E8007938D2 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		D929D4DD26AD323A007938D2 /* NunitoFontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NunitoFontModifier.swift; sourceTree = "<group>"; };
+		D929D4DF26AD3365007938D2 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		D94C703E26AAB4C10054F396 /* PreviewImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImagesRepository.swift; sourceTree = "<group>"; };
 		D94C704326AAD1520054F396 /* ImagesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesResponse.swift; sourceTree = "<group>"; };
 		D94C704626AAFD1F0054F396 /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
@@ -152,6 +162,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D929D4BE26AD30E8007938D2 /* Nunito */ = {
+			isa = PBXGroup;
+			children = (
+				D929D4C226AD30E8007938D2 /* Nunito-Light.ttf */,
+				D929D4C326AD30E8007938D2 /* Nunito-Regular.ttf */,
+				D929D4DF26AD3365007938D2 /* Nunito-Bold.ttf */,
+				D929D4CB26AD30E8007938D2 /* OFL.txt */,
+			);
+			name = Nunito;
+			path = ../../../../Downloads/Nunito;
+			sourceTree = "<group>";
+		};
 		D94C704526AAFD100054F396 /* OnBoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				D955CAC026A13EE500A82394 /* Assets.xcassets */,
+				D929D4BE26AD30E8007938D2 /* Nunito */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -310,6 +333,7 @@
 				D99DCEA226AD026A005F5CB0 /* ColorBadgeView.swift */,
 				D99DCEA426AD0335005F5CB0 /* SecondaryButton.swift */,
 				D99DCEAA26AD07BE005F5CB0 /* View.swift */,
+				D929D4DD26AD323A007938D2 /* NunitoFontModifier.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -464,8 +488,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D929D4E026AD3365007938D2 /* Nunito-Bold.ttf in Resources */,
+				D929D4DA26AD30E8007938D2 /* OFL.txt in Resources */,
 				D955CAC426A13EE500A82394 /* Preview Assets.xcassets in Resources */,
+				D929D4D126AD30E8007938D2 /* Nunito-Light.ttf in Resources */,
 				D955CAC126A13EE500A82394 /* Assets.xcassets in Resources */,
+				D929D4D226AD30E8007938D2 /* Nunito-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +548,7 @@
 				D99DCEA926AD07B0005F5CB0 /* VehicleFeaturesView.swift in Sources */,
 				D94C704926AAFD280054F396 /* OnBoardViewModel.swift in Sources */,
 				D99DCE9826ACF4BF005F5CB0 /* CarImageView.swift in Sources */,
+				D929D4DE26AD323A007938D2 /* NunitoFontModifier.swift in Sources */,
 				D99DCEB126AD0B89005F5CB0 /* VehicleAboutView.swift in Sources */,
 				D94C704726AAFD1F0054F396 /* OnBoardView.swift in Sources */,
 				D99DCEAF26AD0AC2005F5CB0 /* VehicleSavingsBadgeView.swift in Sources */,

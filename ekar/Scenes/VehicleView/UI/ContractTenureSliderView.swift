@@ -32,6 +32,7 @@ struct ContractTenureSliderView: View {
             HStack {
                 ForEach(viewModel.prices.map ({$0.month}), id: \.self) { month in
                     Text(String(month))
+                        .nunitoFont(style: .caption1, weight: .regular)
                     if month != viewModel.prices.last?.month {
                         Spacer()
                     }

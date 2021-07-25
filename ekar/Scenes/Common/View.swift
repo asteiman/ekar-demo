@@ -16,3 +16,9 @@ extension View {
         }
     }
 }
+
+extension View {
+    func nunitoFont(style: UIFont.TextStyle, weight: Font.Weight, color: UIColor? = nil) -> some View {
+        self.modifier(NunitoFontModifier(style: style, weight: weight, textColor: color))
+    }
+}
