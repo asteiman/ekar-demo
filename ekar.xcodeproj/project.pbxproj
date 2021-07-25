@@ -31,6 +31,17 @@
 		D98D6FA926A7099400DF3221 /* FlexibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D6FA826A7099400DF3221 /* FlexibleView.swift */; };
 		D99890DA26ABFE03000732B9 /* OnBoardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99890D926ABFE03000732B9 /* OnBoardCoordinator.swift */; };
 		D99890DC26AC080E000732B9 /* CaptureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99890DB26AC080E000732B9 /* CaptureImageView.swift */; };
+		D99DCE8D26ACF29C005F5CB0 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCE8C26ACF29C005F5CB0 /* MapViewRepresentable.swift */; };
+		D99DCE9026ACF2E4005F5CB0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCE8F26ACF2E4005F5CB0 /* LoadingView.swift */; };
+		D99DCE9226ACF342005F5CB0 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCE9126ACF342005F5CB0 /* Config.swift */; };
+		D99DCE9526ACF3C9005F5CB0 /* NavigationLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCE9426ACF3C9005F5CB0 /* NavigationLogo.swift */; };
+		D99DCE9826ACF4BF005F5CB0 /* CarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCE9726ACF4BF005F5CB0 /* CarImageView.swift */; };
+		D99DCE9A26ACF70A005F5CB0 /* CarImagesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCE9926ACF70A005F5CB0 /* CarImagesGridView.swift */; };
+		D99DCE9C26ACFA7B005F5CB0 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCE9B26ACFA7B005F5CB0 /* MainButton.swift */; };
+		D99DCE9F26ACFF61005F5CB0 /* VehicleSubmitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCE9E26ACFF61005F5CB0 /* VehicleSubmitView.swift */; };
+		D99DCEA126AD0254005F5CB0 /* ContractTenureSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCEA026AD0254005F5CB0 /* ContractTenureSliderView.swift */; };
+		D99DCEA326AD026A005F5CB0 /* ColorBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCEA226AD026A005F5CB0 /* ColorBadgeView.swift */; };
+		D99DCEA526AD0335005F5CB0 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCEA426AD0335005F5CB0 /* SecondaryButton.swift */; };
 		D9B025B826A2CF1E00CE3DD4 /* VehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B025B726A2CF1E00CE3DD4 /* VehicleView.swift */; };
 		D9FBFC2D26A99A110089479A /* ContractRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBFC2C26A99A110089479A /* ContractRepository.swift */; };
 		D9FBFC3026AA7C8E0089479A /* Sliders in Frameworks */ = {isa = PBXBuildFile; productRef = D9FBFC2F26AA7C8E0089479A /* Sliders */; };
@@ -85,6 +96,17 @@
 		D98D6FA826A7099400DF3221 /* FlexibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleView.swift; sourceTree = "<group>"; };
 		D99890D926ABFE03000732B9 /* OnBoardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardCoordinator.swift; sourceTree = "<group>"; };
 		D99890DB26AC080E000732B9 /* CaptureImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureImageView.swift; sourceTree = "<group>"; };
+		D99DCE8C26ACF29C005F5CB0 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
+		D99DCE8F26ACF2E4005F5CB0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		D99DCE9126ACF342005F5CB0 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		D99DCE9426ACF3C9005F5CB0 /* NavigationLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLogo.swift; sourceTree = "<group>"; };
+		D99DCE9726ACF4BF005F5CB0 /* CarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarImageView.swift; sourceTree = "<group>"; };
+		D99DCE9926ACF70A005F5CB0 /* CarImagesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarImagesGridView.swift; sourceTree = "<group>"; };
+		D99DCE9B26ACFA7B005F5CB0 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		D99DCE9E26ACFF61005F5CB0 /* VehicleSubmitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSubmitView.swift; sourceTree = "<group>"; };
+		D99DCEA026AD0254005F5CB0 /* ContractTenureSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractTenureSliderView.swift; sourceTree = "<group>"; };
+		D99DCEA226AD026A005F5CB0 /* ColorBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBadgeView.swift; sourceTree = "<group>"; };
+		D99DCEA426AD0335005F5CB0 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		D9B025B726A2CF1E00CE3DD4 /* VehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleView.swift; sourceTree = "<group>"; };
 		D9FBFC2C26A99A110089479A /* ContractRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractRepository.swift; sourceTree = "<group>"; };
 		D9FBFC3626AAA77E0089479A /* ImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRepository.swift; sourceTree = "<group>"; };
@@ -121,10 +143,9 @@
 		D94C704526AAFD100054F396 /* OnBoard */ = {
 			isa = PBXGroup;
 			children = (
-				D94C704626AAFD1F0054F396 /* OnBoardView.swift */,
+				D99DCE9626ACF4AA005F5CB0 /* UI */,
 				D94C704826AAFD280054F396 /* OnBoardViewModel.swift */,
 				D99890D926ABFE03000732B9 /* OnBoardCoordinator.swift */,
-				D99890DB26AC080E000732B9 /* CaptureImageView.swift */,
 			);
 			path = OnBoard;
 			sourceTree = "<group>";
@@ -195,6 +216,7 @@
 		D955CAE726A13FA600A82394 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D99DCE9326ACF3C1005F5CB0 /* Common */,
 				D94C704526AAFD100054F396 /* OnBoard */,
 				D9B025B626A2CF0E00CE3DD4 /* VehicleView */,
 				D955CAEC26A16AF200A82394 /* MapView */,
@@ -205,7 +227,7 @@
 		D955CAEC26A16AF200A82394 /* MapView */ = {
 			isa = PBXGroup;
 			children = (
-				D955CAE826A13FB700A82394 /* MapView.swift */,
+				D99DCE8E26ACF2CC005F5CB0 /* UI */,
 				D955CAEA26A142B900A82394 /* MapViewModel.swift */,
 				D955CAED26A16B0100A82394 /* MapViewCoordinator.swift */,
 			);
@@ -226,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				D955CABC26A13EE400A82394 /* ekarApp.swift */,
+				D99DCE9126ACF342005F5CB0 /* Config.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -257,12 +280,54 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		D99DCE8E26ACF2CC005F5CB0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D99DCE8C26ACF29C005F5CB0 /* MapViewRepresentable.swift */,
+				D955CAE826A13FB700A82394 /* MapView.swift */,
+				D99DCE8F26ACF2E4005F5CB0 /* LoadingView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D99DCE9326ACF3C1005F5CB0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D99DCE9426ACF3C9005F5CB0 /* NavigationLogo.swift */,
+				D99DCE9B26ACFA7B005F5CB0 /* MainButton.swift */,
+				D99DCEA226AD026A005F5CB0 /* ColorBadgeView.swift */,
+				D99DCEA426AD0335005F5CB0 /* SecondaryButton.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D99DCE9626ACF4AA005F5CB0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D99DCE9726ACF4BF005F5CB0 /* CarImageView.swift */,
+				D94C704626AAFD1F0054F396 /* OnBoardView.swift */,
+				D99890DB26AC080E000732B9 /* CaptureImageView.swift */,
+				D99DCE9926ACF70A005F5CB0 /* CarImagesGridView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D99DCE9D26ACFF57005F5CB0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D99DCE9E26ACFF61005F5CB0 /* VehicleSubmitView.swift */,
+				D9B025B726A2CF1E00CE3DD4 /* VehicleView.swift */,
+				D98D6FA826A7099400DF3221 /* FlexibleView.swift */,
+				D98D6FA626A6CFA300DF3221 /* PagingView.swift */,
+				D99DCEA026AD0254005F5CB0 /* ContractTenureSliderView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		D9B025B626A2CF0E00CE3DD4 /* VehicleView */ = {
 			isa = PBXGroup;
 			children = (
-				D9B025B726A2CF1E00CE3DD4 /* VehicleView.swift */,
-				D98D6FA626A6CFA300DF3221 /* PagingView.swift */,
-				D98D6FA826A7099400DF3221 /* FlexibleView.swift */,
+				D99DCE9D26ACFF57005F5CB0 /* UI */,
 				D975B31726A7C99100637440 /* VehicleViewModel.swift */,
 			);
 			path = VehicleView;
@@ -407,27 +472,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D99DCEA526AD0335005F5CB0 /* SecondaryButton.swift in Sources */,
 				D955CAFE26A1825B00A82394 /* Vehicle.swift in Sources */,
+				D99DCE9C26ACFA7B005F5CB0 /* MainButton.swift in Sources */,
 				D99890DC26AC080E000732B9 /* CaptureImageView.swift in Sources */,
 				D955CAEE26A16B0100A82394 /* MapViewCoordinator.swift in Sources */,
+				D99DCEA326AD026A005F5CB0 /* ColorBadgeView.swift in Sources */,
 				D94C704426AAD1520054F396 /* ImagesResponse.swift in Sources */,
+				D99DCE9F26ACFF61005F5CB0 /* VehicleSubmitView.swift in Sources */,
 				D955CAF126A173E400A82394 /* MapAnnotation.swift in Sources */,
+				D99DCEA126AD0254005F5CB0 /* ContractTenureSliderView.swift in Sources */,
+				D99DCE9026ACF2E4005F5CB0 /* LoadingView.swift in Sources */,
 				D9B025B826A2CF1E00CE3DD4 /* VehicleView.swift in Sources */,
 				D955CAFC26A1820C00A82394 /* VehicleRepository.swift in Sources */,
 				D955CAF726A1817000A82394 /* APICall.swift in Sources */,
 				D98D6FA726A6CFA300DF3221 /* PagingView.swift in Sources */,
 				D9FBFC3726AAA77E0089479A /* ImagesRepository.swift in Sources */,
 				D99890DA26ABFE03000732B9 /* OnBoardCoordinator.swift in Sources */,
+				D99DCE9226ACF342005F5CB0 /* Config.swift in Sources */,
+				D99DCE8D26ACF29C005F5CB0 /* MapViewRepresentable.swift in Sources */,
 				D98D6FA926A7099400DF3221 /* FlexibleView.swift in Sources */,
+				D99DCE9A26ACF70A005F5CB0 /* CarImagesGridView.swift in Sources */,
 				D955CABD26A13EE400A82394 /* ekarApp.swift in Sources */,
 				D9FBFC2D26A99A110089479A /* ContractRepository.swift in Sources */,
 				D975B31A26A7DA1B00637440 /* PreviewVehicleRepository.swift in Sources */,
 				D955CAE926A13FB700A82394 /* MapView.swift in Sources */,
 				D94C704926AAFD280054F396 /* OnBoardViewModel.swift in Sources */,
+				D99DCE9826ACF4BF005F5CB0 /* CarImageView.swift in Sources */,
 				D94C704726AAFD1F0054F396 /* OnBoardView.swift in Sources */,
 				D94C703F26AAB4C10054F396 /* PreviewImagesRepository.swift in Sources */,
 				D955CAEB26A142B900A82394 /* MapViewModel.swift in Sources */,
 				D975B31826A7C99100637440 /* VehicleViewModel.swift in Sources */,
+				D99DCE9526ACF3C9005F5CB0 /* NavigationLogo.swift in Sources */,
 				D955CAF926A181AE00A82394 /* WebRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

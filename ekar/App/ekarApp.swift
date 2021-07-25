@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct ekarApp: App {
+    
+    init() {
+        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().isTranslucent = false
+    }
+    
     var body: some Scene {
         WindowGroup {
-            MapView(viewModel: MapViewModel(repository: VehicleRepository(session: .shared, baseURL: "https://api.carsxe.com")))
+            MapView(viewModel: MapViewModel(repository: VehicleRepository(session: .shared, baseURL: Config.baseUrl)))
         }
     }
 }

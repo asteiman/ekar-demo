@@ -19,8 +19,6 @@ struct VehicleView: View {
     
     init(viewModel: VehicleViewModel) {
         self.viewModel = viewModel
-        UINavigationBar.appearance().barTintColor = .white
-        UINavigationBar.appearance().isTranslucent = false
     }
     
     var body: some View {
@@ -52,7 +50,7 @@ struct VehicleView: View {
                                 Spacer()
                                 Text("Available colors")
                                 ForEach(viewModel.vehicle?.data.colors ?? [], id: \.self) { colorName in
-                                    ColorView(colorName: colorName)
+                                    ColorBadgeView(colorName: colorName)
                                 }
                             }
                             HStack {
@@ -85,49 +83,16 @@ struct VehicleView: View {
                                 }
                             }
                             VStack {
-                                ValueSlider(value: $viewModel.contractSliderValue, in: 0...Float(viewModel.getMaxMonths()), step: 3)
-                                    .valueSliderStyle(
-                                        HorizontalValueSliderStyle(
-                                            track: Rectangle()
-                                                .foregroundColor(Color(UIColor(red: 0.43, green: 0.87, blue: 0.98, alpha: 1.00)))
-                                                .frame(height: 10)
-                                                .cornerRadius(5),
-                                            thumb: Circle()
-                                                .strokeBorder(Color(UIColor(red: 0.43, green: 0.87, blue: 0.98, alpha: 1.00)), lineWidth: 8)
-                                                .background(Circle().foregroundColor(Color.white)),             thumbSize: CGSize(width: 30, height: 30)
-                                        )
-                                    )
-                                    .cornerRadius(8)
-                                    .padding(.leading, 5)
-                                    .padding(.trailing, 5)
-                                HStack {
-                                    ForEach(viewModel.prices.map ({$0.month}), id: \.self) { month in
-                                        Text(String(month))
-                                        if month != viewModel.prices.last?.month {
-                                            Spacer()
-                                        }
-                                    }
-                                }
-                                .padding(.leading, 16)
-                                .padding(.trailing, 16)
-                                .padding(.bottom, 8)
+                                ContractTenureSliderView(viewModel: _viewModel)
                                 HStack {
                                     VStack(alignment: .leading) {
                                         Text("BOOKING FEE")
                                         Text("AED 120")
                                     }
                                     Spacer()
-                                    Button("How contract works?") {
+                                    SecondaryButton(label: "How contract works?") {
                                         presentingToast = true
                                     }
-                                    .padding(EdgeInsets(top: 6, leading: 10, bottom: 6, trailing: 10))
-                                    .foregroundColor(Color(UIColor(red: 0.37, green: 0.80, blue: 0.98, alpha: 1.00)))
-                                    .background(Color.white)
-                                    .clipped()
-                                    .cornerRadius(8)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 8)
-                                            .stroke(Color(UIColor(red: 0.37, green: 0.80, blue: 0.98, alpha: 1.00)), lineWidth: 1))
                                     .toast(isPresented: $presentingToast, dismissAfter: 2.0) {
                                         //
                                     } content: {
@@ -208,44 +173,11 @@ struct VehicleView: View {
                         }.padding(EdgeInsets(top: 10, leading: 16, bottom: 16, trailing: 16))
                     }
                 }
-                HStack {
-                    Spacer()
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Image(viewModel.vehicle?.data.make.lowercased() ?? "")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                            VStack(alignment: .leading) {
-                                Text("\(viewModel.vehicle?.data.make ?? "") \(viewModel.vehicle?.data.model ?? "")")
-                                Text(viewModel.vehicle?.data.type ?? "")
-                            }
-                        }
-                        Spacer().frame(height: 20)
-                        Button("Proceed with your selection") {
-                            self.isModalPresented = true
-                        }
-                        .fullScreenCover(isPresented: $isModalPresented) {
-                            OnBoardView(viewModel: OnBoardViewModel())
-                        }
-                        .frame(width: 280)
-                        .padding(EdgeInsets(top: 16, leading: 20, bottom: 16, trailing: 20))
-                        .foregroundColor(.white)
-                        .background(Color(UIColor(red: 0.45, green: 0.78, blue: 0.96, alpha: 1.00))).clipped()
-                        .cornerRadius(8)
-                    }
-                    .padding(.top, 32)
-                    .padding(.bottom, 32)
-                    Spacer()
-                }.background(
-                    Rectangle()
-                        .fill(Color.white)
-                        .shadow(color: .gray.opacity(0.2), radius: 1, x: 0, y: -2))
+                VehicleSubmitView(model: viewModel.vehicle, isModalPresented: $isModalPresented)
             }
         }.toolbar {
             ToolbarItem(placement: .principal) {
-                Image("logo")
-                    .resizable()
-                    .frame(width: 80, height: 40, alignment: .center)
+                NavigationLogo()
             }
         }
     }
@@ -264,20 +196,5 @@ extension View {
                 .fill(Color.clear)
             self
         }
-    }
-}
-
-struct ColorView: View {
-    
-    private let colorName: String
-    
-    init(colorName: String) {
-        self.colorName = colorName
-    }
-    
-    var body: some View {
-        Circle()
-            .fill(Color(colorName))
-            .frame(width: 10, height: 10)
     }
 }
