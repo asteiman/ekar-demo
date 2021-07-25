@@ -10,7 +10,7 @@ import Combine
 
 class VehicleViewModel: ObservableObject {
     
-    struct VehicleAttribute {
+    struct VehicleAttribute: Equatable {
         let imageName: String
         let label: String
     }

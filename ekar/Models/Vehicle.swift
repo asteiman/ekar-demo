@@ -14,7 +14,13 @@ struct Vehicle {
     var long: Double
 }
 
-struct VehicleContract {
+extension Vehicle: Equatable {
+    static func == (lhs: Vehicle, rhs: Vehicle) -> Bool {
+        return lhs.vin == rhs.vin
+    }
+}
+
+struct VehicleContract: Equatable {
     let month: Int
     let price: Float
 }

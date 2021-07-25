@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct CarImage {
+struct CarImage: Equatable {
     var image: UIImage?
     let placeHolderName: String
     let label: String

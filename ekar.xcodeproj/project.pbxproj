@@ -20,7 +20,6 @@
 		D955CABD26A13EE400A82394 /* ekarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CABC26A13EE400A82394 /* ekarApp.swift */; };
 		D955CAC126A13EE500A82394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D955CAC026A13EE500A82394 /* Assets.xcassets */; };
 		D955CAC426A13EE500A82394 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D955CAC326A13EE500A82394 /* Preview Assets.xcassets */; };
-		D955CACF26A13EE500A82394 /* ekarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CACE26A13EE500A82394 /* ekarTests.swift */; };
 		D955CADA26A13EE500A82394 /* ekarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CAD926A13EE500A82394 /* ekarUITests.swift */; };
 		D955CAE926A13FB700A82394 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CAE826A13FB700A82394 /* MapView.swift */; };
 		D955CAEB26A142B900A82394 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955CAEA26A142B900A82394 /* MapViewModel.swift */; };
@@ -54,6 +53,10 @@
 		D99DCEAF26AD0AC2005F5CB0 /* VehicleSavingsBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCEAE26AD0AC2005F5CB0 /* VehicleSavingsBadgeView.swift */; };
 		D99DCEB126AD0B89005F5CB0 /* VehicleAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCEB026AD0B89005F5CB0 /* VehicleAboutView.swift */; };
 		D9B025B826A2CF1E00CE3DD4 /* VehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B025B726A2CF1E00CE3DD4 /* VehicleView.swift */; };
+		D9B7A5B126AD456100DC977C /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B7A5B026AD456100DC977C /* XCTestCase.swift */; };
+		D9B7A5B326AD45B400DC977C /* MapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B7A5B226AD45B400DC977C /* MapViewModelTests.swift */; };
+		D9B7A5B526AD4C0900DC977C /* OnBoardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B7A5B426AD4C0900DC977C /* OnBoardViewModelTests.swift */; };
+		D9B7A5B826AD54AC00DC977C /* VehicleViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B7A5B726AD54AC00DC977C /* VehicleViewModelTests.swift */; };
 		D9FBFC2D26A99A110089479A /* ContractRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBFC2C26A99A110089479A /* ContractRepository.swift */; };
 		D9FBFC3026AA7C8E0089479A /* Sliders in Frameworks */ = {isa = PBXBuildFile; productRef = D9FBFC2F26AA7C8E0089479A /* Sliders */; };
 		D9FBFC3526AA8E6A0089479A /* ToastUI in Frameworks */ = {isa = PBXBuildFile; productRef = D9FBFC3426AA8E6A0089479A /* ToastUI */; };
@@ -93,7 +96,6 @@
 		D955CAC326A13EE500A82394 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D955CAC526A13EE500A82394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D955CACA26A13EE500A82394 /* ekarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ekarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D955CACE26A13EE500A82394 /* ekarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ekarTests.swift; sourceTree = "<group>"; };
 		D955CAD026A13EE500A82394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D955CAD526A13EE500A82394 /* ekarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ekarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D955CAD926A13EE500A82394 /* ekarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ekarUITests.swift; sourceTree = "<group>"; };
@@ -130,6 +132,10 @@
 		D99DCEAE26AD0AC2005F5CB0 /* VehicleSavingsBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSavingsBadgeView.swift; sourceTree = "<group>"; };
 		D99DCEB026AD0B89005F5CB0 /* VehicleAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAboutView.swift; sourceTree = "<group>"; };
 		D9B025B726A2CF1E00CE3DD4 /* VehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleView.swift; sourceTree = "<group>"; };
+		D9B7A5B026AD456100DC977C /* XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
+		D9B7A5B226AD45B400DC977C /* MapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelTests.swift; sourceTree = "<group>"; };
+		D9B7A5B426AD4C0900DC977C /* OnBoardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardViewModelTests.swift; sourceTree = "<group>"; };
+		D9B7A5B726AD54AC00DC977C /* VehicleViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewModelTests.swift; sourceTree = "<group>"; };
 		D9FBFC2C26A99A110089479A /* ContractRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractRepository.swift; sourceTree = "<group>"; };
 		D9FBFC3626AAA77E0089479A /* ImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,8 +238,9 @@
 		D955CACD26A13EE500A82394 /* ekarTests */ = {
 			isa = PBXGroup;
 			children = (
-				D955CACE26A13EE500A82394 /* ekarTests.swift */,
+				D9B7A5B626AD549300DC977C /* ViewModel */,
 				D955CAD026A13EE500A82394 /* Info.plist */,
+				D9B7A5B026AD456100DC977C /* XCTestCase.swift */,
 			);
 			path = ekarTests;
 			sourceTree = "<group>";
@@ -373,6 +380,16 @@
 				D975B31726A7C99100637440 /* VehicleViewModel.swift */,
 			);
 			path = VehicleView;
+			sourceTree = "<group>";
+		};
+		D9B7A5B626AD549300DC977C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D9B7A5B426AD4C0900DC977C /* OnBoardViewModelTests.swift */,
+				D9B7A5B226AD45B400DC977C /* MapViewModelTests.swift */,
+				D9B7A5B726AD54AC00DC977C /* VehicleViewModelTests.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -565,7 +582,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D955CACF26A13EE500A82394 /* ekarTests.swift in Sources */,
+				D9B7A5B126AD456100DC977C /* XCTestCase.swift in Sources */,
+				D9B7A5B826AD54AC00DC977C /* VehicleViewModelTests.swift in Sources */,
+				D9B7A5B326AD45B400DC977C /* MapViewModelTests.swift in Sources */,
+				D9B7A5B526AD4C0900DC977C /* OnBoardViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
