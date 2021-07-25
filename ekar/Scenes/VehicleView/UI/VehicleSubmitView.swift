@@ -9,13 +9,8 @@ import SwiftUI
 
 struct VehicleSubmitView: View {
     
+    let model: Vehicle?
     @Binding var isModalPresented: Bool
-    private let model: Vehicle?
-    
-    init(model: Vehicle?, isModalPresented: Binding<Bool>) {
-        self._isModalPresented = isModalPresented
-        self.model = model
-    }
     
     var body: some View {
         HStack {

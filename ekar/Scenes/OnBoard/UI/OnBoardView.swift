@@ -16,10 +16,6 @@ struct OnBoardView: View {
     
     @ObservedObject var viewModel: OnBoardViewModel
     
-    init(viewModel: OnBoardViewModel) {
-        self.viewModel = viewModel
-    }
-    
     var body: some View {
         NavigationView {
             ZStack {
@@ -29,7 +25,7 @@ struct OnBoardView: View {
                             .foregroundColor(Color.black)
                             .fixedSize(horizontal: false, vertical: true)
                             .padding(.bottom, 20)
-                        CarImagesGridView(viewModel: _viewModel, showCaptureImageView: $showCaptureImageView, imageIndex: $imageIndex)
+                        CarImagesGridView(viewModel: viewModel, showCaptureImageView: $showCaptureImageView, imageIndex: $imageIndex)
                         HStack {
                             Text("Leave a comment:")
                                 .foregroundColor(Color.black)

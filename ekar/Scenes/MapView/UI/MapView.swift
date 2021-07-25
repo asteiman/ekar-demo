@@ -15,10 +15,6 @@ struct MapView: View {
     @State var isActive: Bool = false
     @State var selectedAnnotation: MapAnnotation?
     
-    init(viewModel: MapViewModel) {
-        self.viewModel = viewModel
-    }
-    
     var body: some View {
         if viewModel.isLoading {
             LoadingView()

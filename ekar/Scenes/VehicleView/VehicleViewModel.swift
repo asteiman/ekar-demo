@@ -10,9 +10,15 @@ import Combine
 
 class VehicleViewModel: ObservableObject {
     
+    struct VehicleAttribute {
+        let imageName: String
+        let label: String
+    }
+    
     @Published var contractSliderValue: Float = 0
     @Published var imagesLoading = true
     @Published var vehicle: Vehicle?
+    @Published var vehicleAttributes: [VehicleAttribute] = []
     @Published var prices: [VehicleContract] = []
     @Published var images: [String] = []
     private var disposables = Set<AnyCancellable>()
@@ -34,6 +40,12 @@ class VehicleViewModel: ObservableObject {
                 //
             } receiveValue: { vehicle in
                 self.vehicle = vehicle
+                self.vehicleAttributes = [
+                    VehicleAttribute(imageName: "attribute-type", label: vehicle.data.cylinders + " cylinders"),
+                    VehicleAttribute(imageName: "attribute-seats", label: vehicle.data.doors + " doors"),
+                    VehicleAttribute(imageName: "attribute-gear", label: vehicle.data.type),
+                    VehicleAttribute(imageName: "attribute-fuel", label: vehicle.data.fuelType)
+                ]
             }
             .store(in: &disposables)
         }

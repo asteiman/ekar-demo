@@ -9,13 +9,8 @@ import SwiftUI
 
 struct MainButton: View {
     
-    private let label: String
-    private let action: () -> Void
-    
-    init(label: String, action: @escaping () -> Void) {
-        self.label = label
-        self.action = action
-    }
+    let label: String
+    let action: () -> Void
     
     var body: some View {
         Button(action: action) {

@@ -9,11 +9,7 @@ import SwiftUI
 
 struct ColorBadgeView: View {
     
-    private let colorName: String
-    
-    init(colorName: String) {
-        self.colorName = colorName
-    }
+    let colorName: String
     
     var body: some View {
         Circle()

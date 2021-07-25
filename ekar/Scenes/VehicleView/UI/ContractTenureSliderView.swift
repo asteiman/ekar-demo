@@ -11,10 +11,6 @@ import Sliders
 struct ContractTenureSliderView: View {
     
     @ObservedObject var viewModel: VehicleViewModel
-    
-    init(viewModel: ObservedObject<VehicleViewModel>) {
-        self._viewModel = viewModel
-    }
 
     var body: some View {
         VStack {

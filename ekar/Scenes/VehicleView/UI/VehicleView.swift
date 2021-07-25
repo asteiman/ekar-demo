@@ -17,10 +17,6 @@ struct VehicleView: View {
     
     @ObservedObject var viewModel: VehicleViewModel
     
-    init(viewModel: VehicleViewModel) {
-        self.viewModel = viewModel
-    }
-    
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing: 0) {
@@ -31,17 +27,7 @@ struct VehicleView: View {
                                 .aspectRatio(4/3, contentMode: .fill)
                                 .frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
                         } else {
-                            PagingView(index: $imageIndex.animation(), maxIndex: max(0, viewModel.images.count - 1)) {
-                                ForEach(viewModel.images, id: \.self) { imageName in
-                                    WebImage(url: URL(string: imageName))
-                                        .resizable()
-                                        .indicator(.activity)
-                                        .transition(.fade(duration: 0.5))
-                                        .scaledToFill()
-                                }
-                            }
-                            .aspectRatio(4/3, contentMode: .fill)
-                            .frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
+                            VehicleImagesView(imageIndex: $imageIndex, images: viewModel.images)
                         }
                         Spacer().frame(height: 30)
                         Group {
@@ -83,7 +69,7 @@ struct VehicleView: View {
                                 }
                             }
                             VStack {
-                                ContractTenureSliderView(viewModel: _viewModel)
+                                ContractTenureSliderView(viewModel: viewModel)
                                 HStack {
                                     VStack(alignment: .leading) {
                                         Text("BOOKING FEE")
@@ -107,69 +93,13 @@ struct VehicleView: View {
                         VStack(alignment: .leading) {
                             Text("About the vehicle")
                             HStack {
-                                VStack(alignment: .center, spacing: 0) {
-                                    Image("attribute-type")
-                                        .resizable().frame(width: 40, height: 40).scaledToFill()
-                                    Text(viewModel.vehicle?.data.cylinders ?? "")
-                                }.inExpandingRectangle()
-                                .padding(.top, 8)
-                                .padding(.bottom, 8)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 12)
-                                        .fill(Color(UIColor(red: 0.89, green: 0.96, blue: 1.00, alpha: 1.00)))
-                                )
-                                VStack(alignment: .center, spacing: 0) {
-                                    Image("attribute-seats")
-                                        .resizable().frame(width: 40, height: 40).scaledToFill()
-                                    Text(viewModel.vehicle?.data.doors ?? "")
+                                ForEach(viewModel.vehicleAttributes, id: \.imageName) { attribute in
+                                    VehicleAttributeView(imageName: attribute.imageName, label: attribute.label)
                                 }
-                                .inExpandingRectangle()
-                                .padding(.top, 8)
-                                .padding(.bottom, 8)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 12)
-                                        .fill(Color(UIColor(red: 0.89, green: 0.96, blue: 1.00, alpha: 1.00)))
-                                )
-                                VStack(alignment: .center, spacing: 0) {
-                                    Image("attribute-gear")
-                                        .resizable().frame(width: 40, height: 40).scaledToFill()
-                                    Text(viewModel.vehicle?.data.type ?? "")
-                                }
-                                .inExpandingRectangle()
-                                .padding(.top, 8)
-                                .padding(.bottom, 8)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 12)
-                                        .fill(Color(UIColor(red: 0.89, green: 0.96, blue: 1.00, alpha: 1.00)))
-                                )
-                                VStack(alignment: .center, spacing: 0) {
-                                    Image("attribute-fuel")
-                                        .resizable().frame(width: 40, height: 40).scaledToFill()
-                                    Text(viewModel.vehicle?.data.fuelType ?? "")
-                                }
-                                .inExpandingRectangle()
-                                .padding(.top, 8)
-                                .padding(.bottom, 8)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 12)
-                                        .fill(Color(UIColor(red: 0.89, green: 0.96, blue: 1.00, alpha: 1.00)))
-                                )
                             }
+                            .padding(.bottom, 10)
                             Text("Key features")
-                            FlexibleView(
-                                data: viewModel.vehicle?.data.features ?? [],
-                                spacing: 8,
-                                alignment: .leading
-                            ) { item in
-                                Text(verbatim: item)
-                                    .padding(8)
-                                    .font(.system(size: 8))
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 12)
-                                            .fill(Color(UIColor(red: 0.89, green: 0.96, blue: 1.00, alpha: 1.00)))
-                                    )
-                                
-                            }
+                            VehicleFeaturesView(features: viewModel.vehicle?.data.features ?? [])
                         }.padding(EdgeInsets(top: 10, leading: 16, bottom: 16, trailing: 16))
                     }
                 }
@@ -186,15 +116,5 @@ struct VehicleView: View {
 struct VehicleView_Previews: PreviewProvider {
     static var previews: some View {
         VehicleView(viewModel: VehicleViewModel(vehicleRepository: PreviewVehicleRepository(), contractRepository: ContractRepository(), imagesRepository: PreviewImagesRepository(), vin: "1"))
-    }
-}
-
-extension View {
-    func inExpandingRectangle() -> some View {
-        ZStack {
-            Rectangle()
-                .fill(Color.clear)
-            self
-        }
     }
 }

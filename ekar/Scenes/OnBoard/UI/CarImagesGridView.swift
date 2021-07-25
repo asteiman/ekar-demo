@@ -12,12 +12,6 @@ struct CarImagesGridView: View {
     @Binding var showCaptureImageView: Bool
     @Binding var imageIndex: Int
     
-    init(viewModel: ObservedObject<OnBoardViewModel>, showCaptureImageView: Binding<Bool>, imageIndex: Binding<Int>) {
-        _viewModel = viewModel
-        _showCaptureImageView = showCaptureImageView
-        _imageIndex = imageIndex
-    }
-    
     var body: some View {
         LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 2)) {
             ForEach((0...(viewModel.images.count - 1)), id: \.self) { index in

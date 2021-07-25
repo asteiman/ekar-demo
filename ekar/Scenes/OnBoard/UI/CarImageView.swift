@@ -8,17 +8,11 @@
 import SwiftUI
 
 struct CarImageView: View {
-    private let image: UIImage?
-    @Binding var showCaptureImageView: Bool
-    private let placeHolderName: String
-    private let label: String
     
-    init(placeHolderName: String, label: String, showCaptureImageView: Binding<Bool>, image: UIImage?) {
-        self.placeHolderName = placeHolderName
-        self.label = label
-        self._showCaptureImageView = showCaptureImageView
-        self.image = image
-    }
+    let placeHolderName: String
+    let label: String
+    @Binding var showCaptureImageView: Bool
+    let image: UIImage?
 
     var body: some View {
         VStack {
