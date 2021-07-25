@@ -29,7 +29,7 @@ class VehicleRepository: VehicleRepositoryProtocol {
             return Just(cachedVehicle).setFailureType(to: GenericError.self).eraseToAnyPublisher()
         }
         
-        return call(endpoint: API.vehicle(key: "b06xiwql9_1hdmgou3u_n0uqktk51", vin: vin))
+        return call(endpoint: API.vehicle(key: Config.apiKey, vin: vin))
             .mapError { _ in
                 GenericError.network
             }

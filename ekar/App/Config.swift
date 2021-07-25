@@ -7,6 +7,12 @@
 
 import Foundation
 
-enum Config {
-    static let baseUrl = "https://api.carsxe.com"
+struct Config {
+    static var baseUrl: String {
+        return Bundle.main.infoDictionary!["BASE_URL"] as! String
+    }
+    
+    static var apiKey: String {
+        return Bundle.main.infoDictionary!["API_KEY"] as! String
+    }
 }

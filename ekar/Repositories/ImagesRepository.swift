@@ -24,7 +24,7 @@ class ImagesRepository: ImagesRepositoryProtocol {
     }
     
     func getBy(make: String, model: String) -> AnyPublisher<[String], GenericError> {
-        return call(endpoint: API.images(key: "b06xiwql9_1hdmgou3u_n0uqktk51", make: make, model: model))
+        return call(endpoint: API.images(key: Config.apiKey, make: make, model: model))
             .mapError { error in
                 GenericError.network
             }
