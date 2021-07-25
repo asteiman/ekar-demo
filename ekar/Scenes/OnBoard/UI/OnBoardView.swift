@@ -32,7 +32,7 @@ struct OnBoardView: View {
                             Spacer()
                         }
                         TextField("", text: $viewModel.comment)
-                        Rectangle().foregroundColor(Color(UIColor(red: 0.91, green: 0.91, blue: 0.91, alpha: 1.00))).frame(height: 1)
+                        Rectangle().foregroundColor(Color("lilac")).frame(height: 1)
                         MainButton(label: "Submit", action: {
                             viewModel.validate()
                         })

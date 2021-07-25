@@ -14,7 +14,7 @@ struct NunitoFontModifier: ViewModifier {
     var textColor: UIColor?
 
     var defaultColor: Color {
-        return Color(UIColor(red: 0.18, green: 0.27, blue: 0.29, alpha: 1.00))
+        return Color("firefly")
     }
 
     func body(content: Content) -> some View {

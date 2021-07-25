@@ -24,7 +24,7 @@ struct VehicleAttributeView: View {
         .padding(.bottom, 8)
         .background(
             RoundedRectangle(cornerRadius: 12)
-                .fill(Color(UIColor(red: 0.89, green: 0.96, blue: 1.00, alpha: 1.00)))
+                .fill(Color("patterns"))
         )
     }
 }

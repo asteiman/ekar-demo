@@ -107,7 +107,7 @@ struct VehicleView: View {
                             }
                             Spacer()
                         }.padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
-                    }.background(Color(UIColor(red: 0.89, green: 0.96, blue: 1.00, alpha: 1.00)))
+                    }.background(Color("patterns"))
                     VehicleAboutView(attributes: viewModel.vehicleAttributes, features: viewModel.vehicle?.data.features ?? [])
                 }
                 VehicleSubmitView(model: viewModel.vehicle, isModalPresented: $isModalPresented)

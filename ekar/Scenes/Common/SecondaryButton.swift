@@ -15,14 +15,14 @@ struct SecondaryButton: View {
     var body: some View {
         Button(action: action) {
             Text(label)
-                .nunitoFont(style: .callout, weight: .bold, color: UIColor(red: 0.37, green: 0.80, blue: 0.98, alpha: 1.00))
+                .nunitoFont(style: .callout, weight: .bold, color: UIColor(Color("maya")))
                 .padding(EdgeInsets(top: 6, leading: 10, bottom: 6, trailing: 10))
                 .background(Color.white)
                 .clipped()
                 .cornerRadius(8)
                 .overlay(
                     RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color(UIColor(red: 0.37, green: 0.80, blue: 0.98, alpha: 1.00)), lineWidth: 1))
+                        .stroke(Color("maya"), lineWidth: 1))
         }
     }
 }

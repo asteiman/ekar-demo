@@ -29,7 +29,7 @@ struct CarImagesGridView: View {
         .padding()
         .overlay(
             RoundedRectangle(cornerRadius: 16)
-                .stroke(Color(UIColor(red: 0.91, green: 0.91, blue: 0.91, alpha: 1.00)), lineWidth: 1)
+                .stroke(Color("lilac"), lineWidth: 1)
         )
         .padding(.bottom, 30)
     }

@@ -17,7 +17,7 @@ struct MainButton: View {
             Text(label)
                 .nunitoFont(style: .footnote, weight: .bold, color: .white)
                 .frame(maxWidth: .infinity, minHeight: 50)
-                .background(Color(UIColor(red: 0.45, green: 0.78, blue: 0.96, alpha: 1.00)))
+                .background(Color("maya"))
                 .cornerRadius(8)
         }
     }

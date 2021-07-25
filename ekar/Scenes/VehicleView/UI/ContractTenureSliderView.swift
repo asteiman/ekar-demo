@@ -18,11 +18,11 @@ struct ContractTenureSliderView: View {
                 .valueSliderStyle(
                     HorizontalValueSliderStyle(
                         track: Rectangle()
-                            .foregroundColor(Color(UIColor(red: 0.43, green: 0.87, blue: 0.98, alpha: 1.00)))
+                            .foregroundColor(Color("spray"))
                             .frame(height: 10)
                             .cornerRadius(5),
                         thumb: Circle()
-                            .strokeBorder(Color(UIColor(red: 0.43, green: 0.87, blue: 0.98, alpha: 1.00)), lineWidth: 8)
+                            .strokeBorder(Color("spray"), lineWidth: 8)
                             .background(Circle().foregroundColor(Color.white)),             thumbSize: CGSize(width: 30, height: 30)
                     )
                 )
